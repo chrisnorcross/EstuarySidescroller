@@ -6,7 +6,7 @@ public class NPC extends Character {
 	public NPC() {
 		image = imagetype[(int) (Math.random()*5)];
 		lane = (int) (Math.random()*5);
+		yloc = lane*10;
 		xloc = 700;
-		lane = yloc
 	}
 }
