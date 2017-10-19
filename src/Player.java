@@ -7,12 +7,16 @@ public class Player extends Character {
 	public Player() {
 		xloc = Model.frameWidth-100;
 		yloc = Model.frameHeight/2;
-		lane=3;
+		lane =3;
 	}
 	public void JumpUp() {
-		this.lane++;
+		if (this.lane<5) {
+			this.lane++;
+		}
 	}
 	public void JumpDown() {
-		this.lane--;
+		if (this.lane>1) {
+			this.lane--;
+		}
 	}
 }
