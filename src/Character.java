@@ -18,6 +18,7 @@ public class Character {
 	public int getYloc() {
 		return this.yloc;
 	}
-	
+	public void Move() {
+	}
 }
 
