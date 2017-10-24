@@ -6,6 +6,9 @@ public class Character {
 	int lane;
 	public Character(){	
 	}
+	public int getLane() {
+		return this.lane;
+	}
 	public void setXloc(int xloc) {
 		this.xloc = xloc;
 	}

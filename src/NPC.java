@@ -11,7 +11,7 @@ public class NPC extends Character {
 		xloc = 700;
 	}
 	
-	public void Move() {
+	public void moveNPC() {
 		xloc = xloc-1;
 	}
 }

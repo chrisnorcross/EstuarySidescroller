@@ -5,7 +5,7 @@ public class Player extends Character {
 	int food=0;
 	
 	public Player() {
-		xloc = Model.frameWidth-100;
+		xloc = Model.frameWidth-350;
 		yloc = Model.frameHeight/2;
 		lane =3;
 	}
@@ -30,7 +30,7 @@ public class Player extends Character {
 	public int getScore() {
 		return this.score;
 	}
-	public int setScore() {
-		return this.setScore();
+	public void setScore(int i) {
+		this.score = i;
 	}
 }
