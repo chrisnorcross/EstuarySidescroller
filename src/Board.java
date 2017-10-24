@@ -4,14 +4,16 @@ import java.lang.Math;
 
 public class Board {
 	public Player player;
-	public int timer;
+	public int timer =4500;
 	private ArrayList<NPC> obstacles;
 	
 	Board(){
 		player = new Player();
 		obstacles = new ArrayList();
 		}
-	
+	public void GameTick() {
+		timer-=1;
+	}
 	public void spawnNPC() {
 		Random rand = new Random();
 		int x = rand.nextInt(2);
@@ -53,7 +55,10 @@ public class Board {
 		}
 	}
 	public void takeTurn() {
-		
+		GameTick();
+		if(timer%5==0) {
+			spawnNPC();
+		}moveNPC();
 	}
 }
 
