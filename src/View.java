@@ -7,19 +7,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-public class View implements ImageObserver{
+public class View extends JFrame implements ImageObserver{
 	BufferedImage pics1;
 	BufferedImage pics2;
 	BufferedImage pics3;
-	
+	JFrame panel = new JFrame();
+// make frame attribute	
 	public View() {
-		BufferedImage img1 = CreateImage(0);
+		pics1 = CreateImage(0);
+		pics2 = CreateImage(1);
+		pics3 = CreateImage(2);
+		/*BufferedImage img1 = CreateImage(0);
 		pics1 = img1.getSubimage(0, 0, Model.imgWidth, Model.imgHeight);
 		BufferedImage img2 = CreateImage(1);
 		pics2 = img2.getSubimage(0, 0, Model.imgWidth, Model.imgHeight);
 		BufferedImage img3 = CreateImage(2);
-		pics3 = img3.getSubimage(0, 0, Model.imgWidth, Model.imgHeight);		
+		pics3 = img3.getSubimage(0, 0, Model.imgWidth, Model.imgHeight);*/		
 	}
 	
 	public void paint(Graphics g, Player p, ArrayList<NPC> obstacles) {

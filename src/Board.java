@@ -49,6 +49,12 @@ public class Board {
 				obstacles.remove(i);
 			}
 			if(obstacles.get(i).getXloc()==player.getXloc() && obstacles.get(i).getLane()==player.getLane()) {
+				System.out.println("Collision");
+				if(obstacles.get(i).value ==100) {
+					player.collisions.add("Hit a food");
+				}else {
+					player.collisions.add("Hit garbage");
+				}
 				player.setScore(obstacles.get(i).value);
 				obstacles.remove(i);
 			}
@@ -56,9 +62,26 @@ public class Board {
 	}
 	public void takeTurn() {
 		GameTick();
-		if(timer%5==0) {
+		if(timer%50==0) {
 			spawnNPC();
 		}moveNPC();
+	}
+	
+	public static void main(String[] args) {
+		Board board = new Board();
+		int j =1;
+		while (board.timer > 0) {
+			System.out.println("Turn " + j);
+			board.takeTurn();
+			j++;
+			System.out.println(board.player);
+			for(NPC n: board.obstacles) {
+				System.out.println(n);
+			}
+		}
+		for(String s : board.player.collisions) {
+			System.out.println(s);
+		}
 	}
 }
 

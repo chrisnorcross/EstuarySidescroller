@@ -14,4 +14,13 @@ public class NPC extends Character {
 	public void moveNPC() {
 		xloc = xloc-1;
 	}
+	
+	public String toString() {
+		if (this.value ==-100) {
+			return "This garbage is in lane:" + this.getLane() + " Its xloc is: " + this.getXloc();
+		}
+		else {
+			return "This food is in lane:" + this.getLane() + " Its xloc is: " + this.getXloc();
+		}
+	}
 }
