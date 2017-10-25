@@ -70,18 +70,22 @@ public class Board {
 	public static void main(String[] args) {
 		Board board = new Board();
 		int j =1;
+
 		while (board.timer > 0) {
 			System.out.println("Turn " + j);
 			board.takeTurn();
 			j++;
-			System.out.println(board.player);
+			
 			for(NPC n: board.obstacles) {
-				System.out.println(n);
+				if(n.getXloc()==351 && n.getLane()==3) {
+					System.out.println(n);
+				}
 			}
 		}
 		for(String s : board.player.collisions) {
 			System.out.println(s);
 		}
+		System.out.println(board.player);
 	}
 }
 
