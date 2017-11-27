@@ -14,15 +14,17 @@ public class Board {
 	public void GameTick() {
 		timer-=1;
 	}
-	public void spawnNPC() {
+	public NPC spawnNPC() {
 		Random rand = new Random();
 		int x = rand.nextInt(2);
 		if (x==1) {
 			Garbage garb = new Garbage();
-			obstacles.add(garb);
+			return garb;
+			//obstacles.add(garb);
 		}else {
 			Food food = new Food();
-			obstacles.add(food);
+			//obstacles.add(food);
+			return food;
 		}
 	}
 	public void moveUp() {
@@ -63,8 +65,24 @@ public class Board {
 	public void takeTurn() {
 		GameTick();
 		if(timer%50==0) {
-			spawnNPC();
-		}moveNPC();
+			boolean space = true;
+			NPC spawn = spawnNPC();
+			for(NPC n : obstacles) {
+				if(n.getLane() == spawn.getLane() && n.getXloc()>Model.frameWidth-75) {
+					System.out.println(n);
+					System.out.println(spawn);
+					space = false;
+					break;
+				}else {
+					space = true;
+				}
+			}
+			if(space) {
+				obstacles.add(spawn);
+				System.out.println("added");
+			}
+		}
+		moveNPC();
 	}
 	
 	public static void main(String[] args) {
