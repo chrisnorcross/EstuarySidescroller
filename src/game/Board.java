@@ -2,16 +2,21 @@ package game;
 //import java.awt.event.KeyEvent;
 //import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Board /*implements KeyListener*/{
-	public Player player;
+	public static Player player;
 	public static int timer;
-	public ArrayList<NPC> obstacles; //ERIC Changed from Private to Public
+	public static ArrayList<NPC> obstacles; //ERIC Changed from Private to Public
 	public boolean isGameOver; // ERIC Changed from private to Public
 	
 	public final static int frameWidth = 700;
 	public final static int frameHeight = 500;
+	
+	public static String STATE = "Menu";
+	public List<Integer> scores = new ArrayList<>();
+	
 	/*
 	public static void main(String[] args) {
 		Board board = new Board();
@@ -79,13 +84,19 @@ public class Board /*implements KeyListener*/{
 	}
 
 	public void update() {
+		System.out.println(STATE);
 		timer++;
+		if (timer%500 ==0) {
+			STATE = "Over";
+			return;
+		}
 		player.updateMovement();
 		Random rand = new Random();
 		boolean isThereSpace = true;
 		moveNPCs();
 		if (player.health <= 0) {
-			isGameOver = true;
+			STATE = "Over";
+			return;
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {
@@ -97,6 +108,12 @@ public class Board /*implements KeyListener*/{
 		if (x == 1 && isThereSpace) {
 			obstacles.add(newNpc);
 		}
+	}
+	public static void reset() {
+		STATE = "Menu";
+		player.setScore(0);
+		player.health = 10;
+		obstacles.clear();
 	}
 	
 	//JUNIT

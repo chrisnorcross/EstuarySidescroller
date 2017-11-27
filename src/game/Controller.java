@@ -1,4 +1,7 @@
 package game;
+
+
+
 /**
  *  @author Bruce
  *  The controller class of our mvc, holds Board
@@ -25,7 +28,9 @@ public class Controller {
 	 * @return void
 	 */
 	public void tick() {
-		board.update();
+		if (board.STATE == "Game"){
+			board.update();
+		}
 	}
 	/**
 	 * @return void
@@ -34,9 +39,11 @@ public class Controller {
 	 * to repaint.
 	 */
 	public void updateView() {
+		//if (board.STATE=="Game") {
 		view.passCharacters(board.getObstacles());
 		view.passPlayer(board.getPlayer());
 		view.repaint();
+		//}
 	}
 
 }

@@ -4,7 +4,7 @@ package game;
  *
  */
 public class Player extends Character {
-	int score = 0;
+	static int score = 0;
 	int health = 10;
 	int food = 0;
 	int verticalVelocity;
@@ -33,6 +33,12 @@ public class Player extends Character {
 		if (isAccel)
 			accel();
 		yloc += verticalVelocity;
+		if(yloc>=Board.frameHeight-(50+score/100)) {
+			yloc = Board.frameHeight-(50+score/100);		
+			}
+		if(yloc<=0) {
+			yloc = 0;
+		}
 	}
 	//JUNIT
 	/**

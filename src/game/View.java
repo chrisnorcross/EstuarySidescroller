@@ -12,6 +12,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
 /**
  * @author ericallen
  *
@@ -23,20 +24,22 @@ public class View extends JFrame{
 	private GamePanel panel;
 	private ArrayList<NPC> obstacles;
 	private Player player;
+	private Board board;
 	public static BufferedImage FishPlayerImage;
 	public static BufferedImage[] TrashNPCImages;
 	public static BufferedImage TrashNPCImage2;
 	public static BufferedImage FoodNPCImage;
 	public static BufferedImage Background;
 	public static BufferedImage BackgroundFlip;
-	
+	public Menu menu;
+	public HighScorePage hiscores;
 	/**
 	 * @param width
 	 * @param height
 	 * @param obstacles
 	 * @param player
 	 */
-	public View(int width, int height, ArrayList<NPC> obstacles, Player player){
+	public View(int width, int height, ArrayList<NPC> obstacles, Player player, Board board, HighScorePage hiscores){
 		try {
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
 			TrashNPCImages = new BufferedImage[2];
@@ -53,9 +56,12 @@ public class View extends JFrame{
 	    panel = new GamePanel();
 	    panel.obstacles = obstacles;
 	    panel.player = player;
+	    panel.board = board;
+	    panel.hiscores = hiscores;
 	    panel.addKeyListener(panel);
+	    panel.addMouseListener(new MouseInput());
 	    getContentPane().add(panel);
-	    setBackground(Color.lightGray);
+	    setBackground(Color.BLACK);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(width,height);
 	    panel.setPreferredSize(new Dimension(width,height));
@@ -156,7 +162,9 @@ class GamePanel extends JPanel implements KeyListener{
 	Player player;
 	int[] lanes;
 	int lanesTall;
-	
+	Menu menu = new Menu();
+	Board board;
+	HighScorePage hiscores = new HighScorePage();
 
 	/**
 	 *  Lets UI delegate paint first, which includes background
@@ -166,19 +174,26 @@ class GamePanel extends JPanel implements KeyListener{
 
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-		g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-		for (game.NPC o : obstacles){
-			if (o.getIsGarbage()) {
-				g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
-			} else {
-				g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+		if(board.STATE=="Game") {
+			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			for (game.NPC o : obstacles){
+				if (o.getIsGarbage()) {
+					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
+				} else {
+					g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+				}
 			}
+			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/200, player.getYloc()-player.score/200, 50+player.score/100, 50+player.score/100, this);
+			g.setColor(Color.BLACK);
+			g.drawString("" + player.getScore(), 50, 50);
+			g.drawString("" + player.getHealth(), 50, 70);
+		}else if(board.STATE == "Menu") {
+			menu.render(g);
+		}else{//(board.STATE == "Over");{
+			hiscores.render(g);
 		}
-		g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/200, player.getYloc()-player.score/200, 50+player.score/100, 50+player.score/100, this);
-		g.setColor(Color.BLACK);
-		g.drawString("" + player.getScore(), 50, 50);
-		g.drawString("" + player.getHealth(), 50, 70);
+		
 		}
 	
 	/**

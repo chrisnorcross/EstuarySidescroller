@@ -7,7 +7,8 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Board board = new Board();
-		View view = new View(700,500, board.getObstacles(), board.getPlayer());
+		HighScorePage hiscores = new HighScorePage();
+		View view = new View(700,500, board.getObstacles(), board.getPlayer(),board, hiscores);
 		Controller controller = new Controller(board,view);
 		while (!board.getIsGameOver()) {
 			controller.tick();
