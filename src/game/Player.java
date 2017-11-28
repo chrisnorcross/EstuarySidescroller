@@ -3,6 +3,7 @@ package game;
  * @author NoahAwad
  *
  */
+
 public class Player extends Character {
 	static int score = 0;
 	int health = 10;
@@ -19,7 +20,10 @@ public class Player extends Character {
 		yloc = 2 * (Main.frameHeight / 5);
 		lane = 3;
 	}
-	public void updateMovement() {//moves the character and updates velocity if a key is still held
+	/**
+	 * moves the character and updates velocity if a key is still held
+	 */
+	public void updateMovement() {
 		if (!isAccel) {
 			if (verticalVelocity > 0) {
 				verticalVelocity -= 1;
@@ -54,20 +58,32 @@ public class Player extends Character {
 	public void eatFood() {
 		this.food++;
 	}
+	/**
+	 * move upwards
+	 */
 	public void accelUp() {
 		verticalVelocity = -5;
 		isAccel = true;
 	}
+	/**
+	 *  move downwards
+	 */
 	public void accelDown() {
 		verticalVelocity = 5;
 		isAccel = true;
 	}
+	/**
+	 * sets acceleration of vertical Velocity
+	 */
 	public void accel() {
 		if (verticalVelocity < 6)
 				verticalVelocity += 2;
 		if (verticalVelocity > -6)
 				verticalVelocity += -2;
 	}
+	/**
+	 * stop acceleration sets to false
+	 */
 	public void stop() {
 		isAccel = false;
 	}
@@ -95,14 +111,18 @@ public class Player extends Character {
 	}
 	//JUNIT
 	
-	/* (non-Javadoc)
+	/** 
+	 * getter of x location
+	 * (non-Javadoc)
 	 * @see game.Character#getXloc()
+	 * @return  xloc
 	 */
 	public int getXloc() {
 		return xloc;
 	}
 	//JUNIT
 	/**
+	 * getScore
 	 * returns the current player objects score
 	 */
 	public int getScore() {
@@ -138,6 +158,9 @@ public class Player extends Character {
 		//return "This player has lane:" + this.lane + " Their score is:" + this.score;
 		return "This player at location " + this.yloc + ", their score is " + this.score + ", and they have " + this.health + " hit points.";
 	}
+	/**
+	 * @return verticalVelocity
+	 */
 	public int getVerticalVelocity() {
 		return verticalVelocity;
 	}

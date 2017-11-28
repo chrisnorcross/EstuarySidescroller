@@ -6,10 +6,19 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+/**
+ * @author ericallen
+ * Creates high score page and menu button to start next round when ready
+ * renders to the the display
+ */
 public class HighScorePage {
 	public Rectangle MenuButton = new Rectangle(Board.frameWidth/4,350,100,50);
 
 	
+	/**
+	 * Method to display the high score page to paint
+	 * @param g Graphics 
+	 */
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD,50);
 		Font font1 = new Font("arial", Font.BOLD,30);

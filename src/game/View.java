@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 
 /**
  * @author ericallen
- *
+ * Cartoony images
  */
 
 public class View extends JFrame{
@@ -34,10 +34,12 @@ public class View extends JFrame{
 	public Menu menu;
 	public HighScorePage hiscores;
 	/**
+	 * Creates the view screen 
 	 * @param width
 	 * @param height
 	 * @param obstacles
 	 * @param player
+	 * @param hiscores
 	 */
 	public View(int width, int height, ArrayList<NPC> obstacles, Player player, Board board, HighScorePage hiscores){
 		try {
@@ -84,8 +86,6 @@ public class View extends JFrame{
 	
 	/**
 	 * Handle the key-released event from the text field.
-	 */
-	/**
 	 * @param obstacles
 	 */
 	public void passCharacters(ArrayList<game.NPC> obstacles) {
@@ -170,8 +170,6 @@ class GamePanel extends JPanel implements KeyListener{
 	 *  Lets UI delegate paint first, which includes background
 	 *  filling since the component is square
 	 */
-	
-
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		if(board.STATE=="Game") {
@@ -199,7 +197,6 @@ class GamePanel extends JPanel implements KeyListener{
 	/**
 	 * Told the panel that it was updated, and is required.
 	 */
-
 	public void addNotify() {
         super.addNotify();
         requestFocus();

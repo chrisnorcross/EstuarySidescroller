@@ -1,6 +1,10 @@
 package game;
 
 
+/**
+ * @author ericallen
+ * Main runs the application
+ */
 public class Main {
 	public final static int frameWidth = 700;
 	public final static int frameHeight = 500;
