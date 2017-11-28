@@ -22,7 +22,7 @@ public class Board /*implements KeyListener*/{
 	public final static int frameHeight = 500;
 	
 	public static String STATE = "Menu";
-	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, "0"));
+	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
 	public int scorequantity=0;
 	
 	/*

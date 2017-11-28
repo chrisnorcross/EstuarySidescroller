@@ -202,6 +202,7 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("" + player.getScore(), 50, 50);
 			g.drawString("" + player.getHealth(), 50, 70);
 		}else if(board.STATE == "Menu") {
+			g.drawImage(View.BackgroundFlip,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			menu.render(g);
 		}else if(Board.STATE == "Tutorial"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
@@ -210,6 +211,8 @@ class GamePanel extends JPanel implements KeyListener{
 			tutorial.render(g);
 		}
 		else if (board.STATE == "Over"){
+			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
+
 			hiscores.render(g);
 		}
 		
