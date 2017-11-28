@@ -3,6 +3,7 @@ package game;
 /**
  * @author Chris N
  *@version
+ *Garbage extends NPC
  */
 
 public class Garbage extends NPC {

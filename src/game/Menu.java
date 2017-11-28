@@ -6,12 +6,21 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
+/**
+ * @author ericallen
+ * Creates menu page with 3 buttons to start the game, go to tutorial and quit
+ * once clicked with the mouse input it directs to that location. Menu drawn in paint
+ */
 public class Menu {
 	
 	public Rectangle PlayButton = new Rectangle(Board.frameWidth/4+120,150,100,50);
 	public Rectangle HelpButton = new Rectangle(Board.frameWidth/4+120,250,100,50);
 	public Rectangle QuitButton = new Rectangle(Board.frameWidth/4+120,350,100,50);
 
+		/**
+		 * Renders the menu to view
+		 * @param g
+		 */
 		public void render(Graphics g) {
 
 			Font font = new Font("arial", Font.BOLD,50);

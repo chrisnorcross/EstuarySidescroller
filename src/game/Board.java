@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * @author ericallen
+ * Board Class
+ */
 public class Board /*implements KeyListener*/{
 	public static Player player;
 	public static int timer;
@@ -36,6 +40,10 @@ public class Board /*implements KeyListener*/{
 	}
 	*/
 	
+	/**
+	 * Board Constructor
+	 * Attributes: timer, player, obstacles, isGameOver
+	 */
 	public Board() {
 		timer=0;
 		player = new Player();
@@ -44,6 +52,11 @@ public class Board /*implements KeyListener*/{
 	}
 	
 	//JUNIT
+	/**
+	 * modelInConsole
+	 * @param n
+	 * prints model to Console
+	 */
 	public void modelInConsole(int n) {
 		if(n==0) {
 			player.jumpDown();
@@ -56,11 +69,20 @@ public class Board /*implements KeyListener*/{
 	}
 	
 	//JUNIT
+	/**
+	 * removeNPC 
+	 * @param i
+	 * removes the obstacles at index
+	 */
 	public void removeNPC(int i) {
 		obstacles.remove(i);
 	}
 	
 	//JUNIT
+	/**
+	 * moveNPC pieces
+	 * updates and removes
+	 */
 	public void moveNPCs() {
 		ArrayList<NPC> removes = new ArrayList<NPC>();
 		for (NPC o : obstacles) {
@@ -84,6 +106,9 @@ public class Board /*implements KeyListener*/{
 		obstacles.removeAll(removes);
 	}
 
+	/**
+	 * updates the game state on the board
+	 */
 	public void update() {
 		System.out.println(STATE);
 		timer++;
@@ -114,6 +139,9 @@ public class Board /*implements KeyListener*/{
 			obstacles.add(newNpc);
 		}
 	}
+	/**
+	 * Reset game to it's initial state
+	 */
 	public static void reset() {
 		STATE = "Menu";
 		player.setScore(0);
@@ -122,65 +150,32 @@ public class Board /*implements KeyListener*/{
 	}
 	
 	//JUNIT
+	/**
+	 * checks to see if game is over
+	 * @return boolean isGameOver
+	 */
 	public boolean getIsGameOver() {
 		return isGameOver;
 	}
 
 	//JUNIT
+	/**getObstacts an arraylist of obstacle instances
+	 * @return obstacles
+	 */
 	public ArrayList<NPC> getObstacles() {
 		return obstacles;
 	}
 
 	//JUNIT
+	/**
+	 * getPlayer()
+	 * gets an instance of a player
+	 * @return player
+	 */
 	public Player getPlayer() {
 		return player;
 	}
 		
-/*
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		int keyCode = e.getKeyCode();
-		if (KeyEvent.VK_UP == keyCode)
-			player.jumpUp();
-		if (KeyEvent.VK_DOWN == keyCode)
-			player.jumpDown();
-		System.out.println("Moved to: " + player.getLane());
-	}
-		*/
 }
 
-/*class GameBoard implements KeyListener{
-	Board board = new Board();
-
-	@Override
-	public void keyPressed(KeyEvent key) {
-		int keyCode = key.getKeyCode();
-		if (KeyEvent.VK_UP == keyCode)
-			board.player.jumpUp();
-		if (KeyEvent.VK_DOWN == keyCode)
-			board.player.jumpDown();
-		System.out.println("Moved to: " + board.player.getLane());
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-	}
-}
-
-*/

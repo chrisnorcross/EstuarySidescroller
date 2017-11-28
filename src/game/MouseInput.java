@@ -4,21 +4,38 @@ import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+/**
+ * @author ericallen
+ * Listener for mouse input
+ */
 public class MouseInput implements MouseListener {
 	
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
+	 * Default
+	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
+	 * Default
+
+	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
+	 * Default
+	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -28,6 +45,10 @@ public class MouseInput implements MouseListener {
 	//public Rectangle HelpButton = new Rectangle(Board.frameWidth/4+120,250,100,50);
 	//public Rectangle QuitButton = new Rectangle(Board.frameWidth/4+120,350,100,50);
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
+	 * Listens for mouse input and makes corrosponding move
+	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
 		int mx = e.getX();
@@ -49,6 +70,10 @@ public class MouseInput implements MouseListener {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.MouseListener#mouseReleased(java.awt.event.MouseEvent)
+	 * default for when the click is disengaged
+	 */
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
