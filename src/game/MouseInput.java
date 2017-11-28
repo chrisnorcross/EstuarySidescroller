@@ -65,7 +65,7 @@ public class MouseInput implements MouseListener {
 		if (Board.STATE == "Menu") {
 			if (mx >= Board.frameWidth / 4 + 120 && mx <= Board.frameWidth / 4 + 220) {
 				if (my >= 150 && my <= 200) {
-					Board.STATE = "Game";
+					Board.STATE = "Character";
 				}
 			}
 			if (mx >= Board.frameWidth / 4 + 120 && mx <= Board.frameWidth / 4 + 300) {
@@ -84,6 +84,13 @@ public class MouseInput implements MouseListener {
 				if (my >= 350 && my <= 400) {
 					Board.STATE = "Menu";
 					Board.reset();
+				}
+			}
+		}
+		if (Board.STATE == "Character") {
+			if (mx >= Board.frameWidth / 4 && mx <= Board.frameWidth / 4 + 100) {
+				if (my >= 250 && my <= 300) {
+					Board.STATE = "GameFish";
 				}
 			}
 		}

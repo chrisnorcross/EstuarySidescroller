@@ -14,7 +14,7 @@ public class Main {
 		HighScorePage hiscores = new HighScorePage();
 		View view = new View(700,500, board.getObstacles(), board.getPlayer(),board, hiscores);
 		Controller controller = new Controller(board,view);
-		while (!board.getIsGameOver()) {
+		while (true) {
 			controller.tick();
 			controller.updateView();
 			/*System.out.println(board.player);

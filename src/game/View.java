@@ -58,7 +58,7 @@ public class View extends JFrame{
 			FoodNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			Background = ImageIO.read(new File("Resources/images/background.PNG"));
 			FoodNPCImages = new BufferedImage[2];
-			PowerUpNPCImage = ImageIO.read(new File("Resources/images/powerup_tmp.png"));
+			PowerUpNPCImage = ImageIO.read(new File("Resources/images/PowerUp.jpg"));
 			FishNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			FoodNPCImages[0] = FishNPCImage;
 			FoodNPCImages[1] = PowerUpNPCImage;
@@ -179,6 +179,7 @@ class GamePanel extends JPanel implements KeyListener{
 	Board board;
 	HighScorePage hiscores = new HighScorePage();
 	Tutorial tutorial = new Tutorial();
+	CharacterChoice choice = new CharacterChoice();
 
 	/**
 	 *  Lets UI delegate paint first, which includes background
@@ -186,7 +187,7 @@ class GamePanel extends JPanel implements KeyListener{
 	 */
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		if(board.STATE=="Game") {
+		if(board.STATE=="GameFish") {
 			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (game.NPC o : obstacles){
@@ -214,6 +215,8 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
 
 			hiscores.render(g);
+		}else if (Board.STATE == "Character") {
+			choice.render(g);
 		}
 		
 		}
