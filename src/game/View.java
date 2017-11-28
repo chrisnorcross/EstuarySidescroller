@@ -26,7 +26,10 @@ public class View extends JFrame{
 	private Player player;
 	private Board board;
 	public static BufferedImage FishPlayerImage;
+	public static BufferedImage FishNPCImage;
+	public static BufferedImage PowerUpNPCImage;
 	public static BufferedImage[] TrashNPCImages;
+	public static BufferedImage[] FoodNPCImages;
 	public static BufferedImage TrashNPCImage2;
 	public static BufferedImage FoodNPCImage;
 	public static BufferedImage Background;
@@ -49,6 +52,11 @@ public class View extends JFrame{
 			TrashNPCImages[1] = ImageIO.read(new File("Resources/images/car-tire-png-479.png"));
 			FoodNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			Background = ImageIO.read(new File("Resources/images/background.PNG"));
+			FoodNPCImages = new BufferedImage[2];
+			PowerUpNPCImage = ImageIO.read(new File("Resources/images/powerup.png"));
+			FishNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
+			FoodNPCImages[0] = FishNPCImage;
+			FoodNPCImages[1] = PowerUpNPCImage;
 			BackgroundFlip = ImageIO.read(new File("Resources/images/backgroundfinal.png"));
 
 		} catch (IOException e) {
@@ -179,10 +187,11 @@ class GamePanel extends JPanel implements KeyListener{
 				if (o.getIsGarbage()) {
 					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
 				} else {
-					g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
 				}
 			}
-			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/200, player.getYloc()-player.score/200, 50+player.score/100, 50+player.score/100, this);
+			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, 50+player.score/50, 50+player.score/50, this);
 			g.setColor(Color.BLACK);
 			g.drawString("" + player.getScore(), 50, 50);
 			g.drawString("" + player.getHealth(), 50, 70);

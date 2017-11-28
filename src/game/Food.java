@@ -13,5 +13,8 @@ public class Food extends NPC {
 	public Food() {
 		value = 100;
 	}
+	public int getValue() {
+		return value;
+	}
 	
 }

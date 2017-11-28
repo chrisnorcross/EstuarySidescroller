@@ -6,6 +6,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 /**
  * @author ericallen
  * Board Class
@@ -49,6 +51,7 @@ public class Board /*implements KeyListener*/{
 		player = new Player();
 		obstacles = new ArrayList<NPC>();
 		isGameOver = false;
+		System.out.println(scores);
 	}
 	
 	//JUNIT
@@ -95,6 +98,16 @@ public class Board /*implements KeyListener*/{
 					(o.getYloc() > player.getYloc()-50) &&
 				(player.getXloc() < o.getXloc()) && 
 						(o.getXloc() < player.getXloc()+50))  {
+				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
+					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
+					 
+					 String answer = JOptionPane.showInputDialog(null, questionAndAnswer[0], "Power Up Question!", JOptionPane.QUESTION_MESSAGE);
+					 if (answer.equals(questionAndAnswer[1])) {
+					 player.changeScore(3*o.getValue());
+					 }else {
+						 player.changeScore(-o.getValue());
+					 }
+				}
 				System.out.println("Collision value:" + o.getValue() + " (+100 means food, -100 means garbage).");
 				player.changeScore(o.getValue());//player hits an NPC and we adjust score
 				if (o.getValue() < 0)
@@ -112,7 +125,7 @@ public class Board /*implements KeyListener*/{
 	public void update() {
 		System.out.println(STATE);
 		timer++;
-		if (timer%500 ==0) {
+		if (timer%5000 ==0) {
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
 			Board.scores.sort(null);

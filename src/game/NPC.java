@@ -10,7 +10,7 @@ import java.util.Random;
 public class NPC extends Character {
 	int image;
 	int[] imagetype = {1,2,3,4,5};
-	int value;
+	int value=100;
 	boolean isGarbage;
 	int speed;
 	
@@ -27,8 +27,7 @@ public class NPC extends Character {
 		Random random = new Random();
 		image = random.nextInt(2);
 		isGarbage = random.nextBoolean();
-		speed = 2 + random.nextInt(2);
-		value = 100;
+		speed = 2 + random.nextInt(6);
 		if (isGarbage)
 			value = -100;
 		lane = (int) (Math.random()*5);
