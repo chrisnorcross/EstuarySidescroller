@@ -53,7 +53,7 @@ public class View extends JFrame{
 			FoodNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			Background = ImageIO.read(new File("Resources/images/background.PNG"));
 			FoodNPCImages = new BufferedImage[2];
-			PowerUpNPCImage = ImageIO.read(new File("Resources/images/powerup.png"));
+			PowerUpNPCImage = ImageIO.read(new File("Resources/images/powerup_tmp.png"));
 			FishNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			FoodNPCImages[0] = FishNPCImage;
 			FoodNPCImages[1] = PowerUpNPCImage;
