@@ -1,7 +1,14 @@
 package game;
 
+/**
+ * @author ericallen
+ *
+ */
 public class PowerUp extends NPC {
 	
+	/**
+	 * Questions
+	 */
 	private static final String[] questions = {
 			 			"What animal has valuable blue blood?",
 			 			"True or false: Humans are a threat to estuaries.",
@@ -14,19 +21,27 @@ public class PowerUp extends NPC {
 			 			"true",
 			 			"salt",
 			 			"red knot"
-			 			
 			 	};
 			 	
-			 	/**Default Constructor
+			 	/**
+			 	 * Default Constructor
 			 	 * 
 			 	 */
 			 	public PowerUp() {
 			 		value = 300;
 			 	}
+			 	/* (non-Javadoc)
+			 	 * @see game.NPC#getValue()
+			 	 * get value
+			 	 */
+
 			 	public int getValue() {
 					return value;
 				}
 			 	
+			 	/**
+			 	 * @return String question and answers
+			 	 */
 			 	public static String[] getQuestionAndAnswer()
 			 	{
 			 		int i = (int) (Math.random() * questions.length);
