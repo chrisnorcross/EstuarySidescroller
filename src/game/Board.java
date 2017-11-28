@@ -126,7 +126,7 @@ public class Board /*implements KeyListener*/{
 	public void update() {
 		//System.out.println(STATE);
 		timer++;
-		if (timer%500 ==0) {
+		if (timer%2000 ==0) {
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
 			Board.scores.sort(null);
