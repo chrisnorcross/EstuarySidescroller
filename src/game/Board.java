@@ -51,7 +51,7 @@ public class Board /*implements KeyListener*/{
 		player = new Player();
 		obstacles = new ArrayList<NPC>();
 		isGameOver = false;
-		System.out.println(scores);
+		//System.out.println(scores);
 	}
 	
 	//JUNIT
@@ -123,7 +123,7 @@ public class Board /*implements KeyListener*/{
 	 * updates the game state on the board
 	 */
 	public void update() {
-		System.out.println(STATE);
+		//System.out.println(STATE);
 		timer++;
 		if (timer%5000 ==0) {
 			STATE = "Over";
@@ -160,6 +160,8 @@ public class Board /*implements KeyListener*/{
 		player.setScore(0);
 		player.health = 10;
 		obstacles.clear();
+		player.yloc = 2 * (Main.frameHeight / 5);
+
 	}
 	
 	//JUNIT
