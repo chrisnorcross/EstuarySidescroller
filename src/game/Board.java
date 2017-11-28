@@ -22,7 +22,8 @@ public class Board /*implements KeyListener*/{
 	public final static int frameHeight = 500;
 	
 	public static String STATE = "Menu";
-	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
+	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, "0"));
+	public int scorequantity=0;
 	
 	/*
 	public static void main(String[] args) {
@@ -125,10 +126,11 @@ public class Board /*implements KeyListener*/{
 	public void update() {
 		//System.out.println(STATE);
 		timer++;
-		if (timer%5000 ==0) {
+		if (timer%500 ==0) {
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
 			Board.scores.sort(null);
+			Collections.reverse(scores);
 			return;
 		}
 		player.updateMovement();
@@ -139,6 +141,7 @@ public class Board /*implements KeyListener*/{
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
 			Board.scores.sort(null);
+			Collections.reverse(scores);
 			return;
 		}
 		NPC newNpc = new NPC();

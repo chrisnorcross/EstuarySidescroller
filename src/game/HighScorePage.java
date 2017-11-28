@@ -31,8 +31,9 @@ public class HighScorePage {
 		g2d.draw(MenuButton);
 		g.setFont(new Font("arial",Font.ITALIC,20));
 		int i = 0;
-		for (int o =0;o<6;o++) {
+		for (int o =0;o<5 ;o++) {
 			g.drawString((i+1) + ". "+ Board.scores.get(o), Board.frameWidth/4, 150+25*i);
+			i++;
 		}
 	}
 }
