@@ -108,6 +108,7 @@ public class Board /*implements KeyListener*/{
 					 }else {
 						 player.changeScore(-o.getValue());
 					 }
+					 player.stop();
 				}
 				System.out.println("Collision value:" + o.getValue() + " (+100 means food, -100 means garbage).");
 				player.changeScore(o.getValue());//player hits an NPC and we adjust score

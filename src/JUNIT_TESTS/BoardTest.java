@@ -29,6 +29,7 @@ public class BoardTest {
 		b1.getPlayer();
 		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
+	
 	@Test
 	public void testReset(){
 		Board b1 = new Board();
