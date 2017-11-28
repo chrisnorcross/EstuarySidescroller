@@ -2,6 +2,7 @@ package game;
 //import java.awt.event.KeyEvent;
 //import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class Board /*implements KeyListener*/{
 	public final static int frameHeight = 500;
 	
 	public static String STATE = "Menu";
-	public List<Integer> scores = new ArrayList<>();
+	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
 	
 	/*
 	public static void main(String[] args) {
@@ -88,6 +89,8 @@ public class Board /*implements KeyListener*/{
 		timer++;
 		if (timer%500 ==0) {
 			STATE = "Over";
+			scores.add(Integer.toString(player.score));
+			Board.scores.sort(null);
 			return;
 		}
 		player.updateMovement();
@@ -96,6 +99,8 @@ public class Board /*implements KeyListener*/{
 		moveNPCs();
 		if (player.health <= 0) {
 			STATE = "Over";
+			scores.add(Integer.toString(player.score));
+			Board.scores.sort(null);
 			return;
 		}
 		NPC newNpc = new NPC();
