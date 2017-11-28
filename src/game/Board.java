@@ -104,7 +104,7 @@ public class Board /*implements KeyListener*/{
 					 
 					 String answer = JOptionPane.showInputDialog(null, questionAndAnswer[0], "Power Up Question!", JOptionPane.QUESTION_MESSAGE);
 					 if (answer.equals(questionAndAnswer[1])) {
-					 player.changeScore(3*o.getValue());
+						 player.changeScore(3*o.getValue());
 					 }else {
 						 player.changeScore(-o.getValue());
 					 }

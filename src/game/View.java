@@ -1,6 +1,7 @@
 package game;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -25,6 +26,8 @@ public class View extends JFrame{
 	private ArrayList<NPC> obstacles;
 	private Player player;
 	private Board board;
+	public static BufferedImage RedKnotPlayerImage;
+	public static BufferedImage TutorialBackground;
 	public static BufferedImage FishPlayerImage;
 	public static BufferedImage FishNPCImage;
 	public static BufferedImage PowerUpNPCImage;
@@ -46,6 +49,8 @@ public class View extends JFrame{
 	 */
 	public View(int width, int height, ArrayList<NPC> obstacles, Player player, Board board, HighScorePage hiscores){
 		try {
+			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
+			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
@@ -173,6 +178,7 @@ class GamePanel extends JPanel implements KeyListener{
 	Menu menu = new Menu();
 	Board board;
 	HighScorePage hiscores = new HighScorePage();
+	Tutorial tutorial = new Tutorial();
 
 	/**
 	 *  Lets UI delegate paint first, which includes background
@@ -197,7 +203,13 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("" + player.getHealth(), 50, 70);
 		}else if(board.STATE == "Menu") {
 			menu.render(g);
-		}else{//(board.STATE == "Over");{
+		}else if(Board.STATE == "Tutorial"){
+			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.FishPlayerImage, 20, 120, 100+player.score/50, 100+player.score/50, this);
+			g.drawImage(View.RedKnotPlayerImage, 20, 225, 100+player.score/50, 100+player.score/50, this);
+			tutorial.render(g);
+		}
+		else if (board.STATE == "Over"){
 			hiscores.render(g);
 		}
 		
