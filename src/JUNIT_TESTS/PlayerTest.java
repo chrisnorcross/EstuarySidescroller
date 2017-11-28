@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import game.Main;
 import game.Player;
+import game.Board;
 import game.Character;
 
 public class PlayerTest {
@@ -46,7 +47,10 @@ public class PlayerTest {
 	
 	@Test
 	public void testEatFood(){
+		Board b1 = new Board();
+		b1.reset();
 		Player p1 = new Player();
+		System.out.println(p1.getScore());
 		assertEquals("0",0,p1.getScore());
 		p1.eatFood();
 		p1.changeScore(100);
@@ -84,7 +88,6 @@ public class PlayerTest {
 	@Test
 	public void testToString(){
 		Player p1 = new Player();
-		
 		/*	
 		 	p1.toString();
 		 	assertEquals("Test to see if model is X (Player)","This player has lane:3 Their score is:0 Player Health:10" ,p1.toString());
@@ -96,7 +99,7 @@ public class PlayerTest {
 	  		assertEquals("Test to see if model is X (Player)","This player has lane:3 Their score is:-100 Player Health:5" ,p1.toString());
 	  	*/
 		///*p1.toString();
-		assertEquals("Test to see if model is X (Player)","This player has lane:3 Their score is:0 Player Health:10" ,p1.toString());
+		assertEquals("Test to see if model is X (Player)","This player at location 200, their score is 0, and they have 10 hit points." ,p1.toString());
 		p1.eatFood();
 		p1.changeScore(100);
 		p1.eatFood();
@@ -104,7 +107,7 @@ public class PlayerTest {
 		p1.getScore();
 		p1.jumpUp();
 		p1.Move();
-		assertEquals("Test to see if model is X (Player)","This player has lane:4 Their score is:200 Player Health:10" ,p1.toString());
+		assertEquals("Test to see if model is X (Player)","This player at location 100, their score is 200, and they have 10 hit points." ,p1.toString());
 		p1.jumpDown();
 		p1.jumpDown();
 		p1.jumpDown();
@@ -117,17 +120,18 @@ public class PlayerTest {
 		p1.changeScore(-100);
 		p1.getScore();
 		p1.getHealth();
-		assertEquals("Test to see if model is X (Player)","This player has lane:1 Their score is:200 Player Health:5" ,p1.toString());
+		assertEquals("Test to see if model is X (Player)","This player at location 400, their score is 200, and they have 5 hit points." ,p1.toString());
 		p1.jumpDown();
 		p1.Move();
 		p1.eatFood();
 		p1.changeScore(100);
 		p1.getScore();
-		assertEquals("Test to see if model is X (Player)","This player has lane:1 Their score is:300 Player Health:5" ,p1.toString());
+		assertEquals("Test to see if model is X (Player)","This player at location 400, their score is 300, and they have 5 hit points." ,p1.toString());
 		p1.takeDamage(-5);
 		p1.changeScore(-100);
 		p1.getHealth();
-		assertEquals("Test to see if model is X (Player)","This player has lane:1 Their score is:200 Player Health:0" ,p1.toString());
+		System.out.println(p1.toString());
+		assertEquals("Test to see if model is X (Player)","This player at location 400, their score is 200, and they have 0 hit points." ,p1.toString());
 	//*/
 	}
 	

@@ -2,3 +2,25 @@
 	// Tests Not Done and Can't be Tested: Main , Food, Garbage
 	// Classes w/ tests but method can't be: Board (Update Only), Character (Move Only)
 	
+	
+JUNIT added:
+Player
+- updateMovement
+- accel
+- accelUp
+- accelDown
+- stop
+- getVerticalVelocity
+
+
+Character
+ - move
+
+MouseInput
+- mousePressed
+
+Board
+- Update
+- 
+
+	

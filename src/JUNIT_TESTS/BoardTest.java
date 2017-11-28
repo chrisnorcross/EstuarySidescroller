@@ -27,7 +27,25 @@ public class BoardTest {
 	public void testPlayer(){
 		Board b1 = new Board();
 		b1.getPlayer();
-		assertEquals("Player To String at the start","This player has lane:3 Their score is:0 Player Health:10",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+	}
+	@Test
+	public void testReset(){
+		Board b1 = new Board();
+		b1.getPlayer();
+		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+
+		b1.getPlayer().changeScore(10);
+		b1.getPlayer().jumpUp();
+;
+		System.out.println(b1.getPlayer());
+		assertEquals("Player To String at the start","This player at location 100, their score is 10, and they have 10 hit points.",b1.getPlayer().toString());
+		b1.reset();
+		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+
+		System.out.println(b1.getPlayer());
+
+		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
 	@Test
 	public void testGetObstacles(){
