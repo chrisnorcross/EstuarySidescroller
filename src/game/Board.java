@@ -100,7 +100,8 @@ public class Board /*implements KeyListener*/{
 				(player.getXloc() < o.getXloc()) && 
 						(o.getXloc() < player.getXloc()+50))  {
 				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
-					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer(); 
+					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
+					 
 					 String answer = JOptionPane.showInputDialog(null, questionAndAnswer[0], "Power Up Question!", JOptionPane.QUESTION_MESSAGE);
 					 if (answer.equals(questionAndAnswer[1])) {
 						 player.changeScore(3*o.getValue());
