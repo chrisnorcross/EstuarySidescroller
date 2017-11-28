@@ -160,6 +160,7 @@ public class Board /*implements KeyListener*/{
 	 */
 	public static void reset() {
 		STATE = "Menu";
+		Board.timer = 0;
 		player.setScore(0);
 		player.health = 10;
 		obstacles.clear();
