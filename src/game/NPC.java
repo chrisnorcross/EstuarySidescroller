@@ -31,8 +31,8 @@ public class NPC extends Character {
 		if (isGarbage)
 			value = -100;
 		lane = (int) (Math.random()*5);
-		yloc = lane * (Main.frameHeight / 5);
-		xloc = 600;
+		yloc = (int) (lane * (Main.frameHeight / 5));
+		xloc = Main.frameWidth-50;
 	}
 	
 	//JUNIT

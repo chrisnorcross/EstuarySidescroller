@@ -100,14 +100,14 @@ public class Board /*implements KeyListener*/{
 				(player.getXloc() < o.getXloc()) && 
 						(o.getXloc() < player.getXloc()+50))  {
 				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
-					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
-					 
+					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer(); 
 					 String answer = JOptionPane.showInputDialog(null, questionAndAnswer[0], "Power Up Question!", JOptionPane.QUESTION_MESSAGE);
 					 if (answer.equals(questionAndAnswer[1])) {
 						 player.changeScore(3*o.getValue());
 					 }else {
 						 player.changeScore(-o.getValue());
 					 }
+					 player.stop();
 				}
 				System.out.println("Collision value:" + o.getValue() + " (+100 means food, -100 means garbage).");
 				player.changeScore(o.getValue());//player hits an NPC and we adjust score
@@ -164,7 +164,7 @@ public class Board /*implements KeyListener*/{
 		player.setScore(0);
 		player.health = 10;
 		obstacles.clear();
-		player.yloc = 2 * (Main.frameHeight / 5);
+		player.yloc = (int) (2 * (Main.frameHeight / 5));
 
 	}
 	

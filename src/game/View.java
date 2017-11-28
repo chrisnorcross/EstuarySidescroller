@@ -190,32 +190,32 @@ class GamePanel extends JPanel implements KeyListener{
 		if(board.STATE=="GameFish") {
 			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-			for (game.NPC o : obstacles){
+			for (NPC o : obstacles){
 				if (o.getIsGarbage()) {
-					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
+					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				} else {
 					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
-					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), 50, 50, null);
+					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}
 			}
-			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, 50+player.score/50, 50+player.score/50, this);
+			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
 			g.setColor(Color.BLACK);
-			g.drawString("" + player.getScore(), 50, 50);
-			g.drawString("" + player.getHealth(), 50, 70);
+			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
 		}else if(board.STATE == "Menu") {
 			g.drawImage(View.BackgroundFlip,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			menu.render(g);
 		}else if(Board.STATE == "Tutorial"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.FishPlayerImage, 20, 120, 100+player.score/50, 100+player.score/50, this);
-			g.drawImage(View.RedKnotPlayerImage, 20, 225, 100+player.score/50, 100+player.score/50, this);
+			g.drawImage(View.FishPlayerImage, Main.frameWidth/35, Main.frameHeight/4, 100, 100, this);
+			g.drawImage(View.RedKnotPlayerImage, Main.frameWidth/35, Main.frameHeight/2, 100, 100, this);
 			tutorial.render(g);
 		}
 		else if (board.STATE == "Over"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
-
 			hiscores.render(g);
 		}else if (Board.STATE == "Character") {
+			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			choice.render(g);
 		}
 		

@@ -16,8 +16,8 @@ public class Player extends Character {
 	 * Creates an instance of a player, with attributes xloc,yloc, and lane
 	 */
 	public Player() {
-		xloc = Main.frameWidth - 650;
-		yloc = 2 * (Main.frameHeight / 5);
+		xloc = (int) (Main.frameWidth - (Main.frameWidth-100));
+		yloc = (int) (2 * (Main.frameHeight / 5));
 		lane = 3;
 	}
 	/**
@@ -37,8 +37,8 @@ public class Player extends Character {
 		if (isAccel)
 			accel();
 		yloc += verticalVelocity;
-		if(yloc>=Board.frameHeight-(50+score/100)) {
-			yloc = Board.frameHeight-(50+score/100);		
+		if(yloc>=Main.frameHeight-(Main.frameHeight/8+score/100)) {
+			yloc = Main.frameHeight-(Main.frameHeight/8+score/100);		
 			}
 		if(yloc<=0) {
 			yloc = 0;
@@ -106,7 +106,7 @@ public class Player extends Character {
 	public void jumpDown() {
 		if (lane > 1) {
 			lane--;
-			yloc = Main.frameHeight - (lane * (Main.frameHeight / 5));
+			yloc =  Main.frameHeight - (lane * (Main.frameHeight / 5));
 		}
 	}
 	//JUNIT

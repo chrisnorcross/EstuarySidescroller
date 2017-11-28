@@ -12,7 +12,7 @@ import java.awt.Rectangle;
  * renders to the the display
  */
 public class HighScorePage {
-	public Rectangle MenuButton = new Rectangle(Board.frameWidth/4,350,100,50);
+	public Rectangle MenuButton = new Rectangle(Main.frameWidth-Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/10);
 
 	
 	/**
@@ -20,19 +20,19 @@ public class HighScorePage {
 	 * @param g Graphics 
 	 */
 	public void render(Graphics g) {
-		Font font = new Font("arial", Font.BOLD,50);
-		Font font1 = new Font("arial", Font.BOLD,30);
+		Font font = new Font("arial", Font.BOLD,Main.frameHeight/10);
+		Font font1 = new Font("arial", Font.BOLD,Main.frameHeight/17);
 		g.setFont(font);
 		g.setColor(Color.BLACK);
-		g.drawString("Score: " + Player.score, Board.frameWidth/4, 100);
+		g.drawString("Score: " + Player.score, Main.frameWidth/4, Main.frameHeight/5);
 		g.setFont(font1);
-		g.drawString("Menu", MenuButton.x+19, MenuButton.y+30);
+		g.drawString("Menu", MenuButton.x+Main.frameWidth/37, MenuButton.y+Main.frameHeight/17);
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.draw(MenuButton);
 		g.setFont(new Font("arial",Font.ITALIC,20));
 		int i = 0;
 		for (int o =0;o<5 ;o++) {
-			g.drawString((i+1) + ". "+ Board.scores.get(o), Board.frameWidth/4, 150+25*i);
+			g.drawString((i+1) + ". "+ Board.scores.get(o), Board.frameWidth/2, Main.frameHeight/3+Main.frameHeight/20*i);
 			i++;
 		}
 	}

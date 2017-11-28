@@ -45,12 +45,18 @@ public class MouseInput implements MouseListener {
 		// TODO Auto-generated method stub
 
 	}
-	// public Rectangle PlayButton = new
-	// Rectangle(Board.frameWidth/4+120,150,100,50);
-	// public Rectangle HelpButton = new
-	// Rectangle(Board.frameWidth/4+120,250,100,50);
-	// public Rectangle QuitButton = new
-	// Rectangle(Board.frameWidth/4+120,350,100,50);
+	//hiscores	
+	//public Rectangle MenuButton = new Rectangle(Main.frameWidth-Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/10);
+	//menu
+	//public Rectangle PlayButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/4,100,50);
+	//public Rectangle HelpButton = new Rectangle(Main.frameWidth/2, Main.frameHeight/3,100,50);
+	//public Rectangle QuitButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/2,100,50);
+	//tutorial
+	//public Rectangle menuButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/4*3,100,50);
+	//characterchoice
+	//public Rectangle FishButton = new Rectangle(Main.frameWidth/4,Main.frameHeight/2,100,50);
+	//public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,100,50);
+	//public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,100,50);
 
 	/*
 	 * (non-Javadoc)
@@ -63,40 +69,40 @@ public class MouseInput implements MouseListener {
 		int mx = e.getX();
 		int my = e.getY();
 		if (Board.STATE == "Menu") {
-			if (mx >= Board.frameWidth / 4 + 120 && mx <= Board.frameWidth / 4 + 220) {
-				if (my >= 150 && my <= 200) {
+			if (mx >= Main.frameWidth / 2 && mx <= Main.frameWidth / 2 + Main.frameWidth/7) {
+				if (my >= 3*Main.frameHeight/12 && my <= 3*Main.frameHeight/12+Main.frameHeight/10) {
 					Board.STATE = "Character";
 				}
 			}
-			if (mx >= Board.frameWidth / 4 + 120 && mx <= Board.frameWidth / 4 + 300) {
-				if (my >= 200 && my <= 300) {
+			if (mx >= Main.frameWidth / 2 && mx <= Main.frameWidth / 2 + Main.frameWidth/7) {
+				if (my >= 5*Main.frameHeight/12 && my <= 5*Main.frameHeight/12+Main.frameHeight/10) {
 					Board.STATE = "Tutorial";
 				}
 			}
-			if (mx >= Board.frameWidth / 4 + 120 && mx <= Board.frameWidth / 4 + 300) {
-				if (my >= 300 && my <= 400) {
+			if (mx >= Main.frameWidth / 2 && mx <= Main.frameWidth / 2 + Main.frameWidth/7) {
+				if (my >= 7*Main.frameHeight/12 && my <= 7*Main.frameHeight/12+Main.frameHeight/10) {
 					System.exit(1);
 				}
 			}
 		}
 		if (Board.STATE == "Over") {
-			if (mx >= Board.frameWidth / 4 && mx <= Board.frameWidth / 4 + 100) {
-				if (my >= 350 && my <= 400) {
+			if (mx >= Main.frameWidth-Main.frameWidth/4 && mx <= Main.frameWidth-Main.frameWidth/4+ Main.frameWidth/7) {
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+Main.frameHeight/10) {
 					Board.STATE = "Menu";
 					Board.reset();
 				}
 			}
 		}
 		if (Board.STATE == "Character") {
-			if (mx >= Board.frameWidth / 4 && mx <= Board.frameWidth / 4 + 100) {
-				if (my >= 250 && my <= 300) {
+			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + 100) {
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+50) {
 					Board.STATE = "GameFish";
 				}
 			}
 		}
 		if (Board.STATE == "Tutorial") {
-			if (mx >= Board.frameWidth / 4 && mx <= Board.frameWidth / 4 + 100) {
-				if (my >= 350 && my <= 400) {
+			if (mx >= Main.frameWidth/2 && mx <= Main.frameWidth/2 + 100) {
+				if (my >= Main.frameHeight/4*3 && my <= Main.frameHeight/4*3+50) {
 					Board.STATE = "Menu";
 				}
 			}

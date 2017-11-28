@@ -28,7 +28,7 @@ public class Controller {
 	 * @return void
 	 */
 	public void tick() {
-		if (board.STATE == "Game"){
+		if (board.STATE == "GameFish"){
 			board.update();
 		}
 	}
