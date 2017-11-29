@@ -18,8 +18,8 @@ public class Board /*implements KeyListener*/{
 	public static ArrayList<NPC> obstacles; //ERIC Changed from Private to Public
 	public boolean isGameOver; // ERIC Changed from private to Public
 	
-	public final static int frameWidth = 700;
-	public final static int frameHeight = 500;
+	public final static int frameWidth = 700; //This can be deleted
+	public final static int frameHeight = 500;//This can be deleted
 	
 	public static String STATE = "Menu";
 	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));

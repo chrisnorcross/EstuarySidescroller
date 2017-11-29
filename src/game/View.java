@@ -29,6 +29,8 @@ public class View extends JFrame{
 	public static BufferedImage RedKnotPlayerImage;
 	public static BufferedImage TutorialBackground;
 	public static BufferedImage FishPlayerImage;
+	public static BufferedImage CrabPlayerImage;
+	public static BufferedImage BirdPlayerImage;
 	public static BufferedImage FishNPCImage;
 	public static BufferedImage PowerUpNPCImage;
 	public static BufferedImage[] TrashNPCImages;
@@ -52,6 +54,8 @@ public class View extends JFrame{
 			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
 			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
+			CrabPlayerImage = ImageIO.read(new File("Resources/images/crab_cartoon.png"));
+			BirdPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
 			TrashNPCImages[1] = ImageIO.read(new File("Resources/images/car-tire-png-479.png"));
@@ -199,6 +203,36 @@ class GamePanel extends JPanel implements KeyListener{
 				}
 			}
 			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
+			g.setColor(Color.BLACK);
+			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+		}else if(board.STATE=="GameCrab") {
+				g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+				g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+				for (NPC o : obstacles){
+					if (o.getIsGarbage()) {
+						g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					} else {
+						//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+						g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					}
+				}
+				g.drawImage(View.CrabPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
+				g.setColor(Color.BLACK);
+				g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+				g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+		}else if(board.STATE=="GameBird") {
+			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			for (NPC o : obstacles){
+				if (o.getIsGarbage()) {
+					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+				} else {
+					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+				}
+			}
+			g.drawImage(View.BirdPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
 			g.setColor(Color.BLACK);
 			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);

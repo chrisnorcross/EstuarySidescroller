@@ -94,9 +94,19 @@ public class MouseInput implements MouseListener {
 			}
 		}
 		if (Board.STATE == "Character") {
-			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + 100) {
-				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+50) {
+			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + 205) { // changed from 100 to 105 to fill buttom
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+90) { // changed from 50 to 90 to fill button
 					Board.STATE = "GameFish";
+				}
+			}
+			if (mx >= 2* Main.frameWidth / 4 && mx <= 2* Main.frameWidth / 4 + 205) { // changed from 100 to 105 to fill buttom
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+90) { // changed from 50 to 90 to fill button
+					Board.STATE = "GameCrab";
+				}
+			}
+			if (mx >= 3*Main.frameWidth / 4 && mx <= 3*Main.frameWidth / 4 + 205) { // changed from 100 to 105 to fill buttom
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+90) { // changed from 50 to 90 to fill button
+					Board.STATE = "GameBird";
 				}
 			}
 		}
