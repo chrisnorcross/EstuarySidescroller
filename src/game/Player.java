@@ -4,6 +4,10 @@ package game;
  *
  */
 
+//TODO can you type in the answer to the question below? Thanks
+// ERIC QUESTION: Do we use jumpUP or jumpDown or do we only use the accel now?
+// Changed players starting point from 100 to frameWidth/12 (120) which for 13" mac (1440 width)
+
 public class Player extends Character {
 	static int score = 0;
 	int health = 10;
@@ -16,7 +20,7 @@ public class Player extends Character {
 	 * Creates an instance of a player, with attributes xloc,yloc, and lane
 	 */
 	public Player() {
-		xloc = (int) (Main.frameWidth - (Main.frameWidth-100));
+		xloc = (int) (Main.frameWidth - (Main.frameWidth-Main.frameWidth/12));
 		yloc = (int) (2 * (Main.frameHeight / 5));
 		lane = 3;
 	}
@@ -109,8 +113,8 @@ public class Player extends Character {
 			yloc =  Main.frameHeight - (lane * (Main.frameHeight / 5));
 		}
 	}
-	//JUNIT
 	
+	//JUNIT
 	/** 
 	 * getter of x location
 	 * (non-Javadoc)
@@ -155,7 +159,6 @@ public class Player extends Character {
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
-		//return "This player has lane:" + this.lane + " Their score is:" + this.score;
 		return "This player at location " + this.yloc + ", their score is " + this.score + ", and they have " + this.health + " hit points.";
 	}
 	/**

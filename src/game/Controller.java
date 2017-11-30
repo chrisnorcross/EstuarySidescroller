@@ -1,7 +1,4 @@
 package game;
-
-
-
 /**
  *  @author Bruce
  *  The controller class of our mvc, holds Board
@@ -9,6 +6,7 @@ package game;
  *	tick() method, and passes the board to the
  *	view so it can draw the list of characters.
  */
+ 
 public class Controller {
 	private Board board;
 	private View view;
@@ -28,7 +26,8 @@ public class Controller {
 	 * @return void
 	 */
 	public void tick() {
-		if (board.STATE == "GameFish"){
+		//XXX Made tick work for all game states. also changed from board to Board. 
+		if (Board.STATE == "GameFish"||Board.STATE == "GameCrab"||Board.STATE == "GameBird"){//update for any
 			board.update();
 		}
 	}

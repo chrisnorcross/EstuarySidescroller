@@ -3,11 +3,14 @@ package JUNIT_TESTS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import org.junit.Test;
 
 import game.Board;
+import game.Main;
 import game.NPC;
 
 
@@ -27,20 +30,20 @@ public class BoardTest {
 	public void testPlayer(){
 		Board b1 = new Board();
 		b1.getPlayer();
-		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
 	
 	@Test
 	public void testReset(){
 		Board b1 = new Board();
 		b1.getPlayer();
-		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 		b1.getPlayer().changeScore(10);
 		b1.getPlayer().jumpUp();
-		assertEquals("Player To String at the start","This player at location 100, their score is 10, and they have 10 hit points.",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 180, their score is 10, and they have 10 hit points.",b1.getPlayer().toString());
 		b1.reset();
-		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
-		assertEquals("Player To String at the start","This player at location 200, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
+		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
 	@Test
 	public void testGetObstacles(){

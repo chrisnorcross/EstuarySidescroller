@@ -9,24 +9,50 @@ import javax.swing.JFrame;
  * @author ericallen
  * Main runs the application
  */
+
+//XXX READ THIS
+/**
+ * NOTE FOR FULLSCREEN VS PARTIAL SCREEN
+ * If doing anything other than full screen make sure the values for frameWidth and frameHeights
+ * EXAMPLE:
+ * 	public static int frameWidth;// = 700; //delete the = 700
+ *  public static int frameHeight;// = 500; //delete the = 500
+ *  ALSO COMMENT OUT THE screenSize.getHeight/Width
+ *  
+ *  
+ *  If you are doing partial screen make sure you  
+ *  make sure you have the frameHeight and Width commented out in the main
+ *  also comment out the view.setExtendedState(JFrame.MAXIMIZED_BOTH);
+ *  AND assign the frameHeight/Width a value above the main
+ * 
+ * @author ericallen
+ */
+
+
+//FIXME: for JUnit tests frameWidth/Height are not declared until runtime. How do we test with no values. 
+//FIXME: I just set the value without the final... verify that it resets with frameWidth/height correctly on your computer 
+
 public class Main {
 	public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	public static int frameWidth;// = 500;
-	public static int frameHeight;// = 300;
+	//XXX IMPORTANT: I ONLY HAVE IN FOR TESTING PURPOSES
+	public static int frameWidth = 1440;// = 700; //delete unless partial screen
+	public static int frameHeight=900;// = 500; //delete unless partial screen
 	
 	public static void main(String[] args) {
 		frameWidth =(int) screenSize.getWidth();
 		frameHeight =(int) screenSize.getHeight();
-		//frameHeight = frameHeight - 65; lowest height we want the fish to go on the macbook screen.
-		// however it messes with the food.. Person can just ride the bottom like and not take damage
+		//FIXME frameHeight = frameHeight - 65; lowest height we want the fish to go on the macbook screen.
+		//FIXME however it messes with the food.. Person can just ride the bottom like and not take damage
 
 		Board board = new Board();
 		HighScorePage hiscores = new HighScorePage();
 		View view = new View(frameWidth,frameHeight, board.getObstacles(), board.getPlayer(),board, hiscores);
 		Controller controller = new Controller(board,view);
+		
+		//XXX IF NOT USING FULL SCREEN COMMENT OUT
 		view.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		//public static Dimension screenSize = Toolkit.getDefaultToolkit().sync();
-
+		
+		
 		while (true) {
 			controller.tick();
 			controller.updateView();
