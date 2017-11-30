@@ -45,18 +45,7 @@ public class MouseInput implements MouseListener {
 		// TODO Auto-generated method stub
 
 	}
-	//hiscores	
-	//public Rectangle MenuButton = new Rectangle(Main.frameWidth-Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/10);
-	//menu
-	//public Rectangle PlayButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/4,100,50);
-	//public Rectangle HelpButton = new Rectangle(Main.frameWidth/2, Main.frameHeight/3,100,50);
-	//public Rectangle QuitButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/2,100,50);
-	//tutorial
-	//public Rectangle menuButton = new Rectangle(Main.frameWidth/2,Main.frameHeight/4*3,100,50);
-	//characterchoice
-	//public Rectangle FishButton = new Rectangle(Main.frameWidth/4,Main.frameHeight/2,100,50);
-	//public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,100,50);
-	//public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,100,50);
+
 
 	/*
 	 * (non-Javadoc)
