@@ -5,25 +5,31 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-
 public class CharacterChoice {
-	public Rectangle FishButton = new Rectangle(Main.frameWidth/4,Main.frameHeight/2,100,50);
-	public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,100,50);
-	public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,100,50);
-	
+	public Rectangle FishButton = new Rectangle(1*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
+	public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
+	public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
+	//XXX Added menu button
+	public Rectangle MenuButton = new Rectangle(4*Main.frameWidth/5,Main.frameHeight/4*3,Main.frameWidth/7,Main.frameHeight/8);
+
 	public void render(Graphics g) {
+		//XXX Changed font sizes to be consistent
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/10);
-		Font font1 = new Font("arial", Font.BOLD,30);
+		Font font1 = new Font("arial", Font.BOLD,Main.frameHeight/14);
 		g.setFont(font);
 		g.setColor(Color.black);
-		g.drawString("Choose your character", Main.frameWidth/4, Main.frameHeight/5);
+		g.drawString("Choose your character", Main.frameWidth/6, Main.frameHeight/5); 
 		g.setFont(font1);
-		g.drawString("Fish", FishButton.x+20, FishButton.y+30);
-		g.drawString("Crab", CrabButton.x+20, CrabButton.y+30);
-		g.drawString("Bird", BirdButton.x+20, BirdButton.y+30);
+		g.drawString("Fish", (int) Math.round(FishButton.x+FishButton.getWidth()/5), (int)Math.round(FishButton.y+2*FishButton.getHeight()/3));
+		g.drawString("Crab", (int) Math.round(CrabButton.x+CrabButton.getWidth()/5), (int)Math.round(CrabButton.y+2*CrabButton.getHeight()/3));
+		g.drawString("Bird", (int) Math.round(BirdButton.x+BirdButton.getWidth()/5), (int)Math.round(BirdButton.y+2*BirdButton.getHeight()/3));
+		g.drawString("Menu", (int) Math.round(MenuButton.x+MenuButton.getWidth()/8), (int)Math.round(MenuButton.y+5*MenuButton.getHeight()/7));
+
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.draw(FishButton);
 		g2d.draw(CrabButton);
 		g2d.draw(BirdButton);
+		g2d.draw(MenuButton);
+
 	}
 }

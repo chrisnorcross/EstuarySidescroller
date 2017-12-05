@@ -14,7 +14,7 @@ public class NPCTest {
 	@Test
 	public void testMoveNPC() {
 		NPC n1 = new NPC();
-		assertEquals("Get X Location before placed",600,n1.getXloc());
+		assertEquals("Get X Location before placed",1390,n1.getXloc());
 		int original = n1.getXloc();
 		n1.moveNPC();
 		int right = n1.getXloc();
@@ -45,7 +45,7 @@ public class NPCTest {
 	@Test
 	public void testGetXloc() {
 		NPC n1 = new NPC();
-		assertEquals("Starting X Location",600,n1.getXloc());
+		assertEquals("Starting X Location",1390,n1.getXloc());
 		assertNotEquals("Not Starting X Location",Main.frameWidth - 450,n1.getXloc());
 		assertNotEquals("Not Starting X Location",Main.frameWidth - 750,n1.getXloc());
 	}
@@ -55,9 +55,9 @@ public class NPCTest {
 		NPC n1 = new NPC();
 		if (n1.getIsGarbage()){
 			n1.toString();
-			assertEquals("Test to string method","This garbage has lane:"+n1.getLane()+" It's xloc is:600" ,n1.toString());
+			assertEquals("Test to string method","This garbage has lane:"+n1.getLane()+" It's xloc is:1390" ,n1.toString());
 		}else
-			assertEquals("Test to string method","This food has lane:"+n1.getLane()+" It's xloc is:600" ,n1.toString());
+			assertEquals("Test to string method","This food has lane:"+n1.getLane()+" It's xloc is:1390" ,n1.toString());
 	}
 
 }

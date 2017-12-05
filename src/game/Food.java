@@ -7,7 +7,6 @@ package game;
 public class Food extends NPC {
 	
 	/**
-	 * 
 	 * Food sets value 100 for the NPC class.  
 	 */
 	public Food() {

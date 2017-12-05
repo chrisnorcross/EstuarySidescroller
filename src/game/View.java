@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -18,6 +19,11 @@ import javax.swing.JPanel;
  * @author ericallen
  * Cartoony images
  */
+//TODO add final version of pictures for the game
+//TODO get crab and bird playing how we want
+
+//XXX good for resizing images... I think paintComponent is complete now just need to give right pics to game
+//XXX Not sure about: paint component (g.drawImage) and view constructor for different games
 
 public class View extends JFrame{
 
@@ -54,8 +60,8 @@ public class View extends JFrame{
 			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
 			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
-			CrabPlayerImage = ImageIO.read(new File("Resources/images/crab_cartoon.png"));
-			BirdPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
+			CrabPlayerImage = ImageIO.read(new File("Resources/images/crab_cartoon.png"));//CRAB CHANGE
+			BirdPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));//BIRD CHANGE
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
 			TrashNPCImages[1] = ImageIO.read(new File("Resources/images/car-tire-png-479.png"));
@@ -189,9 +195,11 @@ class GamePanel extends JPanel implements KeyListener{
 	 *  Lets UI delegate paint first, which includes background
 	 *  filling since the component is square
 	 */
+	
+	//XXX made a bunch of changes to this
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		if(board.STATE=="GameFish") {
+		if(Board.STATE=="GameFish") {
 			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (NPC o : obstacles){
@@ -202,11 +210,11 @@ class GamePanel extends JPanel implements KeyListener{
 					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}
 			}
-			g.drawImage(View.FishPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
+			g.drawImage(View.FishPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 			g.setColor(Color.BLACK);
 			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
-		}else if(board.STATE=="GameCrab") {
+		}else if(Board.STATE=="GameCrab") {
 				g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 				g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 				for (NPC o : obstacles){
@@ -217,11 +225,11 @@ class GamePanel extends JPanel implements KeyListener{
 						g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 					}
 				}
-				g.drawImage(View.CrabPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
+				g.drawImage(View.CrabPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 				g.setColor(Color.BLACK);
 				g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 				g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
-		}else if(board.STATE=="GameBird") {
+		}else if(Board.STATE=="GameBird") {
 			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (NPC o : obstacles){
@@ -232,24 +240,28 @@ class GamePanel extends JPanel implements KeyListener{
 					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}
 			}
-			g.drawImage(View.BirdPlayerImage, player.getXloc()-player.score/100, player.getYloc()-player.score/100, Main.frameWidth/14+player.score/50, Main.frameHeight/10+player.score/50, this);
+			g.drawImage(View.RedKnotPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 			g.setColor(Color.BLACK);
 			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
-		}else if(board.STATE == "Menu") {
+		}else if(Board.STATE == "Menu") {
 			g.drawImage(View.BackgroundFlip,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			menu.render(g);
 		}else if(Board.STATE == "Tutorial"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.FishPlayerImage, Main.frameWidth/35, Main.frameHeight/4, 100, 100, this);
-			g.drawImage(View.RedKnotPlayerImage, Main.frameWidth/35, Main.frameHeight/2, 100, 100, this);
+			g.drawImage(View.FishPlayerImage, Main.frameWidth/35+Main.frameWidth/14, Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
+			g.drawImage(View.RedKnotPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 2* Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
+			g.drawImage(View.CrabPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 3*Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);//Eric Added
 			tutorial.render(g);
 		}
-		else if (board.STATE == "Over"){
+		else if (Board.STATE == "Over"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			hiscores.render(g);
 		}else if (Board.STATE == "Character") {
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.FishPlayerImage, Main.frameWidth/4+Main.frameWidth/32,Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);
+			g.drawImage(View.RedKnotPlayerImage,3*Main.frameWidth/4+Main.frameWidth/32, Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);
+			g.drawImage(View.CrabPlayerImage, 2*Main.frameWidth/4 +Main.frameWidth/32, Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);//Eric Added
 			choice.render(g);
 		}
 		

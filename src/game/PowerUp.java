@@ -9,6 +9,10 @@ public class PowerUp extends NPC {
 	/**
 	 * Questions
 	 */
+	
+	//TODO: Add more questions and answers
+	//TODO: Alter the frequency of the powerups. Need less
+	//FIXME: Do not let the game ask duplicate questions
 	private static final String[] questions = {
 			 			"What animal has valuable blue blood?",
 			 			"True or false: Humans are a threat to estuaries.",

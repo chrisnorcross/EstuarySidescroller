@@ -12,9 +12,8 @@ import java.awt.Rectangle;
  * renders to the the display
  */
 public class HighScorePage {
-	public Rectangle MenuButton = new Rectangle(Main.frameWidth-Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/10);
+	public Rectangle MenuButton = new Rectangle(4*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/6,Main.frameHeight/10);
 
-	
 	/**
 	 * Method to display the high score page to paint
 	 * @param g Graphics 
@@ -26,13 +25,15 @@ public class HighScorePage {
 		g.setColor(Color.BLACK);
 		g.drawString("Score: " + Player.score, Main.frameWidth/4, Main.frameHeight/5);
 		g.setFont(font1);
-		g.drawString("Menu", MenuButton.x+Main.frameWidth/37, MenuButton.y+Main.frameHeight/17);
+		g.drawString("Menu",(int)Math.round(MenuButton.x+MenuButton.getWidth()/8),(int)Math.round(MenuButton.y+5*MenuButton.getHeight()/7));
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.draw(MenuButton);
-		g.setFont(new Font("arial",Font.ITALIC,20));
+		//XXX made it a little sexier and used consistent font (display stuff)
+		g.setFont(new Font("arial",Font.ITALIC,Main.frameHeight/14));
 		int i = 0;
 		for (int o =0;o<5 ;o++) {
-			g.drawString((i+1) + ". "+ Board.scores.get(o), Board.frameWidth/2, Main.frameHeight/3+Main.frameHeight/20*i);
+			g.drawString((i+1) + ". "+ Board.scores.get(o), Main.frameWidth/8, Main.frameHeight/3+Main.frameHeight/15*i);
+			//XXX changed frameWidth/2 from Board to Main and remove variables from Board
 			i++;
 		}
 	}
