@@ -14,7 +14,6 @@ public class Character {
 	public Character(){	
 	}
 	
-	//JUNIT
 	/**
 	 * get lane position
 	 * @return lane
@@ -22,7 +21,7 @@ public class Character {
 	public int getLane() {
 		return this.lane;
 	}
-	//JUNIT
+
 	/**
 	 * set x location
 	 * @param xloc
@@ -30,7 +29,6 @@ public class Character {
 	public void setXloc(int xloc) {
 		this.xloc = xloc;
 	}
-	//JUNIT
 	/**
 	 * set y location
 	 * @param yloc
@@ -39,7 +37,6 @@ public class Character {
 		this.yloc = yloc;
 		
 	}	
-	//JUNIT
 	/**
 	 * get x location
 	 * @return xloc
@@ -47,7 +44,6 @@ public class Character {
 	public int getXloc() {
 		return this.xloc;
 	}
-	//JUNIT
 	/**
 	 * get's y location
 	 * @return yloc

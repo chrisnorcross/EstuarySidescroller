@@ -40,7 +40,6 @@ public class NPC extends Character {
         //XXX 650 at 700 Width, 1390 at macbook pro 13" width of 1440
 	}
 	
-	//JUNIT
 	/**
 	 * Moves the NPC to the left by speed pixels
 	 */
@@ -48,7 +47,6 @@ public class NPC extends Character {
 		xloc -= speed;
 	}
 	
-	//JUNIT
 	/**
 	 * @return isGarbage, a boolean depending on the type of the NPC
 	 */
@@ -56,7 +54,6 @@ public class NPC extends Character {
 		return isGarbage;
 	}
 
-	//JUNIT
 	/**
 	 * @return value, the points value of the npc
 	 */
@@ -64,15 +61,13 @@ public class NPC extends Character {
 		return value;
 	}
 	
-	//JUNIT
-	/* (non-Javadoc)
+	/* 
 	 * @see game.Character#getXloc()
 	 */
 	public int getXloc() {
 		return xloc;
 	}
 	
-	//JUNIT
 	/** toString method for any NPC
 	 * @return String describing the NPC and its location depending on if it is garbage or food
 	 */
