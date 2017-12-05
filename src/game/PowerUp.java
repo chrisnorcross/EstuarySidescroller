@@ -28,11 +28,11 @@ public class PowerUp extends NPC {
 			 			"An inherited change in a living thing that helps it survive better in its environment. ",
 			 			"Animal plankton; many are microscopic but include larger animals such as jellyfish. Some, such as copepods, remain plankton for entire life cycle, while others, such as crabs, are planktonic only during larval stages. ",
 			 			"The particular part of the environment where a plant or animal naturally lives. ",
-			 			"Structure that demonstrates the movement of food energy through an ecosytem. “Producers” (plants) serve as the foundation level and an apex consumer is at the top level.",
+			 			"Structure that demonstrates the movement of food energy through an ecosytem. Producers (plants) serve as the foundation level and an apex consumer is at the top level.",
 			 			"A network of interacting food chains. ",
 			 			"Microorganism that breaks down dead tissue and returns the nutrients to the ecosystem.",
 			 			"Organism that feeds upon something else.",
-			 			"Level within a food pyramid demonstrating an organism’s place in the feeding order within an ecosystem. "
+			 			"Level within a food pyramid demonstrating an organism's place in the feeding order within an ecosystem. "
 			 			
 			 	};
 			 	

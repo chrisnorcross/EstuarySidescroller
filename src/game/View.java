@@ -41,6 +41,11 @@ public class View extends JFrame{
 	public static BufferedImage[] FoodNPCImages;
 	public static BufferedImage TrashNPCImage2;
 	public static BufferedImage FoodNPCImage;
+	public static BufferedImage SmogNPCImage;
+	public static BufferedImage EggNPCImage;
+	public static BufferedImage FlyNPCImage;
+
+	
 	public static BufferedImage Background;
 	public static BufferedImage BackgroundFish;
 	public static BufferedImage BackgroundBird;
@@ -74,6 +79,11 @@ public class View extends JFrame{
 			FoodNPCImages[1] = PowerUpNPCImage;
 			BackgroundFish = ImageIO.read(new File("Resources/images/backgroundfinal.png"));
 			BackgroundBird = ImageIO.read(new File("Resources/images/background bird final.png"));
+			SmogNPCImage = ImageIO.read(new File("Resources/images/Smog_Cloud.png"));
+			EggNPCImage = ImageIO.read(new File("Resources/images/Mirelurk_Eggs.png"));
+			FlyNPCImage = ImageIO.read(new File("Resources/images/4-fly-png-image.png"));
+
+
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -234,10 +244,17 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawImage(View.BackgroundBird, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (NPC o : obstacles){
 				if (o.getIsGarbage()) {
-					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
-				} else {
+					g.drawImage(View.SmogNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+				}else if(View.FoodNPCImages[o.image] == View.PowerUpNPCImage) {
+					g.drawImage(View.PowerUpNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+				}	
+				else {
 					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
-					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					if (o.getLane()==4) {
+						g.drawImage(View.EggNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					}else {
+						g.drawImage(View.FlyNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					}
 				}
 			}
 			g.drawImage(View.RedKnotPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
