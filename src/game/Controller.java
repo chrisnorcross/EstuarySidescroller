@@ -1,4 +1,5 @@
 package game;
+
 /**
  *  @author Bruce
  *  The controller class of our mvc, holds Board
@@ -10,6 +11,7 @@ package game;
 public class Controller {
 	private Board board;
 	private View view;
+	
 	/**
 	 * Takes in a given board and view and
 	 * initiates the controller.
@@ -30,6 +32,7 @@ public class Controller {
 			board.update();
 		}
 	}
+	
 	/**
 	 * @return void
 	 * Passes the list of obstacles, and player
@@ -37,11 +40,8 @@ public class Controller {
 	 * to repaint.
 	 */
 	public void updateView() {
-		//if (board.STATE=="Game") {
 		view.passCharacters(board.getObstacles());
 		view.passPlayer(board.getPlayer());
 		view.repaint();
-		//}
 	}
-
 }

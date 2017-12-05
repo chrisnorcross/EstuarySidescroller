@@ -43,6 +43,7 @@ public class BoardTest {
 		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
+	
 	@Test
 	public void testGetObstacles(){
 		Board b1 = new Board();
@@ -59,6 +60,7 @@ public class BoardTest {
 		assertEquals("Obstacles have been removed",2,b1.getObstacles().size());
 
 	}
+	
 	@Test
 	public void testMoveNPCs(){
 		Board b1 = new Board();
@@ -78,6 +80,7 @@ public class BoardTest {
 		assertNotEquals("Obstacles have been removed",2,b1.getObstacles().size());
 
 	}
+	
 	@Test
 	public void testRemoveNPC(){
 		Board b1 = new Board();
@@ -90,7 +93,6 @@ public class BoardTest {
 		Board.obstacles.add(n);
 		Board.obstacles.add(n2);
 		//System.out.println("-------Original-----------");
-
 
 		b1.removeNPC(1);
 		//System.out.println("-------Remove 1-----------");
@@ -124,10 +126,9 @@ public class BoardTest {
 
 		b1.removeNPC(0);
 		assertEquals("make sure the right obstacle remains",a1.toString(),b1.getObstacles().toString());
-
-
-		
 	}
+	
+	
 	@Test
 	public void testModelInConsole() {
 		Board b1 = new Board();	

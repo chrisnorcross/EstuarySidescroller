@@ -27,14 +27,6 @@ Board
 
 
 
-BLUE IMPORTANT MARKS
-- Board = 2
-- Main = 2 + 1 READ
-- NPC = 2 + 2 READ.... surrounding resizing screen
-- Player = 2
-- Tutorial = 2  ****
-- View = 4 ** commented out board
-
 
 MAIN TO DO'S:
 - Fix tutorial get working and connected - JAMA
@@ -44,7 +36,6 @@ MAIN TO DO'S:
 
 Change what the bird and crab has to eats and what they have to dodge
 
-if you click cancel on the power up screen the game terminates
 
 QUESTIONS:
 https://coast.noaa.gov/data/estuaries/pdf/estuary-food-pyramid-teacher-guide.pdf

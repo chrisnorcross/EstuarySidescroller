@@ -5,12 +5,22 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+
+/**
+ * @author ericallen
+ * Creates the view for to select character screen, makes 4 buttons
+ */
 public class CharacterChoice {
 	public Rectangle FishButton = new Rectangle(1*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
 	public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
 	public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
 	public Rectangle MenuButton = new Rectangle(4*Main.frameWidth/5,Main.frameHeight/4*3,Main.frameWidth/7,Main.frameHeight/8);
 
+	/**
+	 * Renders the button to the screen
+	 * @param g
+	 */
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/10);
 		Font font1 = new Font("arial", Font.BOLD,Main.frameHeight/14);

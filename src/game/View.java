@@ -17,11 +17,6 @@ import javax.swing.JPanel;
  * @author ericallen
  * Cartoony images
  */
-//TODO add final version of pictures for the game
-//TODO get crab and bird playing how we want
-
-//XXX I think paintComponent is complete now just need to give right pics to game
-//XXX Not sure about: paint component (g.drawImage) and view constructor for different games
 
 public class View extends JFrame{
 
@@ -29,7 +24,7 @@ public class View extends JFrame{
 	private GamePanel panel;
 	private ArrayList<NPC> obstacles;
 	private Player player;
-	//private Board board;  //XXX I REMOVED BOARD!!! - ERIC
+	//private Board board;  
 	public static BufferedImage RedKnotPlayerImage;
 	public static BufferedImage TutorialBackground;
 	public static BufferedImage FishPlayerImage;
@@ -60,8 +55,8 @@ public class View extends JFrame{
 			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));
 			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
-			CrabPlayerImage = ImageIO.read(new File("Resources/images/Crab_Transparent_PNG_Image.png"));//CRAB CHANGE
-			BirdPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));//BIRD CHANGE
+			CrabPlayerImage = ImageIO.read(new File("Resources/images/Crab_Transparent_PNG_Image.png"));
+			BirdPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
 			TrashNPCImages[1] = ImageIO.read(new File("Resources/images/car-tire-png-479.png"));
@@ -303,8 +298,6 @@ class GamePanel extends JPanel implements KeyListener{
 		System.out.println("Player has stopped moving");
 		repaint();
 	}
-
-
 
 	@Override
 	/**

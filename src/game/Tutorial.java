@@ -6,12 +6,19 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
-//FIXME: The drawstring with text need to be fixed to fit on the screen (and different size screens)
-//XXX  Need to adjust the images for the final version keeping coordinates
+/**
+ * @author ericallen
+ * creates the view for the tutorial screen
+ */
 
 public class Tutorial {
 	public Rectangle menuButton = new Rectangle(5*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
 	public Rectangle characterButton = new Rectangle(4*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
+	
+	/**
+	 * Renders the graphics to the view
+	 * @param g
+	 */
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/Main.frameHeight/25);
 		Font font3 = new Font("arial", Font.BOLD,Main.frameHeight/20);

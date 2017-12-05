@@ -1,14 +1,11 @@
 package game;
+
+
 /**
- * @author NoahAwad
- *
+ * @author ericallen
+ * player attributes: score, health, food,
+ *  verticalVelocity and isAccel
  */
-
-//TODO can you type in the answer to the question below? Thanks
-// ERIC QUESTION: Do we use jumpUP or jumpDown or do we only use the accel now?
-//FIXME: (FIXED) Eric changed this.score to Player.score
-
-
 public class Player extends Character {
 	static int score = 0;
 	int health = 10;

@@ -18,6 +18,7 @@ public class HighScorePage {
 	 * Method to display the high score page to paint
 	 * @param g Graphics 
 	 */
+	
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/10);
 		Font font1 = new Font("arial", Font.BOLD,Main.frameHeight/17);

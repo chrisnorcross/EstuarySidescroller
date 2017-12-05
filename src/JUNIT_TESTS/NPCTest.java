@@ -59,5 +59,4 @@ public class NPCTest {
 		}else
 			assertEquals("Test to string method","This food has lane:"+n1.getLane()+" It's xloc is:1390" ,n1.toString());
 	}
-
 }
