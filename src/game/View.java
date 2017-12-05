@@ -1,9 +1,7 @@
 package game;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -31,7 +29,7 @@ public class View extends JFrame{
 	private GamePanel panel;
 	private ArrayList<NPC> obstacles;
 	private Player player;
-	private Board board;
+	//private Board board;  //XXX I REMOVED BOARD!!! - ERIC
 	public static BufferedImage RedKnotPlayerImage;
 	public static BufferedImage TutorialBackground;
 	public static BufferedImage FishPlayerImage;

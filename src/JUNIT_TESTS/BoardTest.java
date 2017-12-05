@@ -3,14 +3,12 @@ package JUNIT_TESTS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+
 import java.util.ArrayList;
 
 import org.junit.Test;
 
 import game.Board;
-import game.Main;
 import game.NPC;
 
 
@@ -41,7 +39,7 @@ public class BoardTest {
 		b1.getPlayer().changeScore(10);
 		b1.getPlayer().jumpUp();
 		assertEquals("Player To String at the start","This player at location 180, their score is 10, and they have 10 hit points.",b1.getPlayer().toString());
-		b1.reset();
+		Board.reset();
 		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 		assertEquals("Player To String at the start","This player at location 360, their score is 0, and they have 10 hit points.",b1.getPlayer().toString());
 	}
@@ -56,8 +54,8 @@ public class BoardTest {
 		n.setXloc(1);
 		n2.setXloc(1);
 
-		b1.obstacles.add(n);
-		b1.obstacles.add(n2);
+		Board.obstacles.add(n);
+		Board.obstacles.add(n2);
 		assertEquals("Obstacles have been removed",2,b1.getObstacles().size());
 
 	}
@@ -71,8 +69,8 @@ public class BoardTest {
 		n.setXloc(1);
 		n2.setXloc(1);
 
-		b1.obstacles.add(n);
-		b1.obstacles.add(n2);
+		Board.obstacles.add(n);
+		Board.obstacles.add(n2);
 
 		b1.moveNPCs();
 		
@@ -89,8 +87,8 @@ public class BoardTest {
 		n.setXloc(1);
 		n2.setXloc(1);
 
-		b1.obstacles.add(n);
-		b1.obstacles.add(n2);
+		Board.obstacles.add(n);
+		Board.obstacles.add(n2);
 		//System.out.println("-------Original-----------");
 
 
@@ -114,8 +112,8 @@ public class BoardTest {
 		n1.setXloc(1);
 		n3.setXloc(1);
 
-		b1.obstacles.add(n1);
-		b1.obstacles.add(n3);
+		Board.obstacles.add(n1);
+		Board.obstacles.add(n3);
 
 		//System.out.println("-------N3-----------");
 

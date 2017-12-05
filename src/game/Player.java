@@ -6,6 +6,8 @@ package game;
 
 //TODO can you type in the answer to the question below? Thanks
 // ERIC QUESTION: Do we use jumpUP or jumpDown or do we only use the accel now?
+//FIXME: (FIXED) Eric changed this.score to Player.score
+
 
 public class Player extends Character {
 	static int score = 0;
@@ -132,7 +134,7 @@ public class Player extends Character {
 	 * returns the current player objects score
 	 */
 	public int getScore() {
-		return this.score;
+		return Player.score;
 	}
 	
 
@@ -140,7 +142,7 @@ public class Player extends Character {
 	 * @param int i is the score you want to set for the current player
 	 */
 	public void setScore(int i) {
-		this.score = i;
+		Player.score = i;
 	}
 
 	/**
@@ -161,7 +163,7 @@ public class Player extends Character {
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {
-		return "This player at location " + this.yloc + ", their score is " + this.score + ", and they have " + this.health + " hit points.";
+		return "This player at location " + this.yloc + ", their score is " + Player.score + ", and they have " + this.health + " hit points.";
 	}
 	/**
 	 * @return verticalVelocity

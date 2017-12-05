@@ -1,8 +1,11 @@
+REMOVE PRIOR TO SUBMITTING
+
+
 	// Classes with no tests: View, Controller, Main, Food, Garbage
 	// Tests Not Done and Can't be Tested: Main , Food, Garbage
 	// Classes w/ tests but method can't be: Board (Update Only), Character (Move Only)
 	
-	
+*** I do not think we need anymore ****	
 JUNIT added:
 Player
 - updateMovement
@@ -21,5 +24,31 @@ MouseInput
 
 Board
 - Update
+
+
+
+BLUE IMPORTANT MARKS
+- Board = 2
+- Main = 2 + 1 READ
+- NPC = 2 + 2 READ.... surrounding resizing screen
+- Player = 2
+- Tutorial = 2  ****
+- View = 4 ** commented out board
+
+
+I changed player.score to Player.score and this.score to Player.score.
+I commented out board in the view.
+@SuppressWarnings("static-access") for PlayerTest reset
+Increased game play time from 2000 to 3000
+
+
+
+
+MAIN TO DO'S:
+- Fix tutorial get working and connected - JAMA
+- Prevent player from leaving the screen - Idk how... Chris or Bruce
+- How power up questions are displaced -- I don't think we do this. In the tutorial for power ups say to enter the name spelled correctly in all lower case letters
+- Load in final images - Chris
+- Game play for crab-- Idk how... Chris of Bruce
 
 	

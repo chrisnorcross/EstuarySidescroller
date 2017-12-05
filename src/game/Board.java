@@ -1,6 +1,4 @@
 package game;
-//import java.awt.event.KeyEvent;
-//import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -125,17 +123,17 @@ public class Board /*implements KeyListener*/{
 		timer++;
 		if (timer%3000 ==0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(player.score));
+				scoresfish.add(Integer.toString(Player.score));
 				Board.scoresfish.sort(null);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(player.score));
+				scorescrab.add(Integer.toString(Player.score));
 				Board.scorescrab.sort(null);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(player.score));
+				scoresbird.add(Integer.toString(Player.score));
 				Board.scoresbird.sort(null);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
@@ -149,18 +147,18 @@ public class Board /*implements KeyListener*/{
 		moveNPCs();
 		if (player.health <= 0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(player.score));
+				scoresfish.add(Integer.toString(Player.score));
 				Board.scoresfish.sort(null);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
 				System.out.println(scoresfish.get(0));
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(player.score));
+				scorescrab.add(Integer.toString(Player.score));
 				Board.scorescrab.sort(null);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(player.score));
+				scoresbird.add(Integer.toString(Player.score));
 				Board.scoresbird.sort(null);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
@@ -170,8 +168,7 @@ public class Board /*implements KeyListener*/{
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {
-//TODO Can we change the -350 to a variable that changes with size? Main.frameWidth/4. What does this do?
-			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth-350)){ 
+			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() >  Main.frameWidth- Main.frameWidth/4)){// about 360 mac was framewidth -350
 				isThereSpace = false;
 			}
 		}
@@ -217,4 +214,3 @@ public class Board /*implements KeyListener*/{
 		return player;
 	}
 }
-
