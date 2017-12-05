@@ -12,19 +12,16 @@ import javax.swing.JOptionPane;
  * @author ericallen
  * Board Class
  */
+
 public class Board /*implements KeyListener*/{
 	public static Player player;
 	public static int timer;
-	public static ArrayList<NPC> obstacles; //ERIC Changed from Private to Public
-	public boolean isGameOver; // ERIC Changed from private to Public
-	
-	public final static int frameWidth = 700; //This can be deleted
-	public final static int frameHeight = 500;//This can be deleted
-	
+	public static ArrayList<NPC> obstacles;
+	public boolean isGameOver; 
 	public static String STATE = "Menu";
 	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
 	public int scorequantity=0;
-	
+	//XXX  Removed frameWidth and frameHeight from here because they are declared and used from the Main
 	/*
 	public static void main(String[] args) {
 		Board board = new Board();
@@ -52,7 +49,6 @@ public class Board /*implements KeyListener*/{
 		player = new Player();
 		obstacles = new ArrayList<NPC>();
 		isGameOver = false;
-		//System.out.println(scores);
 	}
 	
 	//JUNIT
@@ -95,10 +91,11 @@ public class Board /*implements KeyListener*/{
 				removes.add(o);
 				continue;
 			}
-			if ((o.getYloc() < player.getYloc()+50) &&
-					(o.getYloc() > player.getYloc()-50) &&
+			//TODO WHAT DOES THIS DO? -- Eric Can we change the +50 and -50 to something else?
+			if ((o.getYloc() < player.getYloc()+50) &&//HERE
+					(o.getYloc() > player.getYloc()-50) &&//HERE
 				(player.getXloc() < o.getXloc()) && 
-						(o.getXloc() < player.getXloc()+50))  {
+						(o.getXloc() < player.getXloc()+50))  {//HERE 
 				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
 					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
 					 
@@ -127,6 +124,7 @@ public class Board /*implements KeyListener*/{
 	public void update() {
 		//System.out.println(STATE);
 		timer++;
+		//XXX Are we all good on the timer being 2000?
 		if (timer%2000 ==0) {
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
@@ -147,7 +145,8 @@ public class Board /*implements KeyListener*/{
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {
-			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth-350)){
+//TODO Can we change the -350 to a variable that changes with size? Main.frameWidth/4. What does this do?
+			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth-350)){ 
 				isThereSpace = false;
 			}
 		}
@@ -195,7 +194,5 @@ public class Board /*implements KeyListener*/{
 	public Player getPlayer() {
 		return player;
 	}
-		
-
 }
 
