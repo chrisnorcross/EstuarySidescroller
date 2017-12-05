@@ -23,6 +23,7 @@ public class Board /*implements KeyListener*/{
 	public static List<Integer> scoresbird = new ArrayList<>(Collections.nCopies(5, 0));
 
 	public int scorequantity=0;
+	
 	/*
 	public static void main(String[] args) {
 		Board board = new Board();
