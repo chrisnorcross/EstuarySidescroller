@@ -26,12 +26,8 @@ public class Controller {
 	 * @return void
 	 */
 	public void tick() {
-<<<<<<< HEAD
-		if (board.STATE == "GameFish" ||board.STATE == "GameCrab"||board.STATE == "GameBird"){
-=======
 		//XXX Made tick work for all game states. also changed from board to Board. 
 		if (Board.STATE == "GameFish"||Board.STATE == "GameCrab"||Board.STATE == "GameBird"){//update for any
->>>>>>> branch 'master' of https://github.com/chrisnorcross/EstuarySidescroller
 			board.update();
 		}
 	}

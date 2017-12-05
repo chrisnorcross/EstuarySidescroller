@@ -40,10 +40,6 @@ public class MouseInput implements MouseListener {
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/chrisnorcross/EstuarySidescroller
 
 	/*
 	 * (non-Javadoc)
