@@ -2,12 +2,13 @@ package game;
 
 /**
  * @author ericallen     
- *
+ * Attributes: xloc, yloc, lane
  */
 public class Character {
 	int xloc;
 	int yloc;
 	int lane;
+	
 	/**
 	 * Character constructor.
 	 */
@@ -29,30 +30,30 @@ public class Character {
 	public void setXloc(int xloc) {
 		this.xloc = xloc;
 	}
-	/**
-	 * set y location
+	
+	/** set y location
 	 * @param yloc
 	 */
 	public void setYloc(int yloc) {
 		this.yloc = yloc;
 		
-	}	
-	/**
-	 * get x location
+	}
+	
+	/**  get x location
 	 * @return xloc
 	 */
 	public int getXloc() {
 		return this.xloc;
 	}
-	/**
-	 * get's y location
+	
+	/** get's y location
 	 * @return yloc
 	 */
 	public int getYloc() {
 		return this.yloc;
 	}
-	/**
-	 * It moves
+	
+	/**It moves
 	 */
 	public void Move() {
 	}

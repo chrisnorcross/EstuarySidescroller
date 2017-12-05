@@ -26,7 +26,6 @@ public class PlayerTest {
 		p1.jumpUp();
 		p1.Move();
 		assertEquals("Move Up 1 to lane 5",5,p1.getLane());
-
 	}
 	
 	@Test
@@ -42,7 +41,6 @@ public class PlayerTest {
 		p1.jumpDown();
 		p1.Move();
 		assertEquals("Move Down 1 to lane 1",1,p1.getLane());
-
 	}
 	
 	@SuppressWarnings("static-access")
@@ -61,7 +59,6 @@ public class PlayerTest {
 		p1.eatFood();
 		p1.changeScore(100);
 		assertEquals("300",300,p1.getScore());
-
 	}
 	
 	@Test
@@ -208,8 +205,6 @@ public class PlayerTest {
 		assertEquals("Score is NOT 300",300,p1.getScore());
 		assertEquals("Score is NOT 100",100,p1.getScore());
 		assertEquals("Score is NOT 0",0,p1.getScore());
-		
-
 	}
 	
 	
@@ -236,8 +231,6 @@ public class PlayerTest {
 		assertEquals("Starting Y Location",365,c1.getYloc());
 		assertNotEquals("NOT Starting Y Location",0,c1.getYloc());
 		assertNotEquals("NOT Starting Y Location",2 * (Main.frameHeight / 5)-5,c1.getYloc());
-
-
 	}
 	
 	@Test

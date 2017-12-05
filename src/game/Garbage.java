@@ -15,8 +15,11 @@ public class Garbage extends NPC {
 		value = -100;
 	}
 	
+	/**
+	 * Get Value
+	 * Return value
+	 */
 	public int getValue() {
 		return value;
 	}
-
 }

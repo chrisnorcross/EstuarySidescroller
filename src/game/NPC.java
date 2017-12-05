@@ -32,12 +32,8 @@ public class NPC extends Character {
 			value = -100;
 		lane = (int) (Math.random()*5);
 		yloc = (int) (lane * (Main.frameHeight / 5));
-		
-		//TODO I wanted to change this but did not. Can we make it something consistent with all screens? Because with 
-		//TODO different size screens the tests will act differently.. I think we could just have it be the start of the frame width idk?
 		xloc = Main.frameWidth - 50; 
-		//XXX ** xloc - This is fine in full screen and as long as the other screen does not go wider than the view 
-        //XXX 650 at 700 Width, 1390 at macbook pro 13" width of 1440
+		//650 at 700 Width, 1390 at macbook pro 13" width of 1440
 	}
 	
 	/**
@@ -78,6 +74,4 @@ public class NPC extends Character {
 			return "This garbage has lane:" + this.lane + " It's xloc is:"+this.xloc;
 		}
 	}
-	
-	
 }
