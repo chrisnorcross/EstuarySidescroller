@@ -61,6 +61,7 @@ public class MouseInput implements MouseListener {
 			if (mx >= 4*Main.frameWidth/6 && mx <= 4*Main.frameWidth/6+ Main.frameWidth/6) {
 				if (my >= Main.frameHeight/4*3 && my <= Main.frameHeight/4*3+Main.frameHeight/10) {
 					Board.STATE = "Menu";
+					Board.prevState = "";
 					Board.reset();
 				}
 			}

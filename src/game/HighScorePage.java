@@ -30,9 +30,21 @@ public class HighScorePage {
 		g2d.draw(MenuButton);
 		g.setFont(new Font("arial",Font.ITALIC,Main.frameHeight/14));
 		int i = 0;
-		for (int o =0;o<5 ;o++) {
-			g.drawString((i+1) + ". "+ Board.scores.get(o), Main.frameWidth/8, Main.frameHeight/3+Main.frameHeight/15*i);
-			i++;
+		if (Board.prevState == "GameFish") {
+			for (int o =0;o<5 ;o++) {
+				g.drawString((i+1) + ". "+ Board.scoresfish.get(o), Main.frameWidth/8, Main.frameHeight/3+Main.frameHeight/15*i);
+				i++;
+			}
+		}else if (Board.prevState == "GameCrab") {
+			for (int o =0;o<5 ;o++) {
+				g.drawString((i+1) + ". "+ Board.scorescrab.get(o), Main.frameWidth/8, Main.frameHeight/3+Main.frameHeight/15*i);
+				i++;
+			}
+		}else if(Board.prevState == "GameBird"){
+			for (int o =0;o<5 ;o++) {
+				g.drawString((i+1) + ". "+ Board.scoresbird.get(o), Main.frameWidth/8, Main.frameHeight/3+Main.frameHeight/15*i);
+				i++;
+			}
 		}
 	}
 }
