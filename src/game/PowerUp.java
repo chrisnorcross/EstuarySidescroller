@@ -9,10 +9,9 @@ public class PowerUp extends NPC {
 	/**
 	 * Questions
 	 */
-
 	private static final String[] questions = { "What animal has valuable blue blood?",
 			"True or false: Humans are a threat to estuaries.", "Estuaries contain a mix of fresh and ________ water",
-			"This small bird feeds on horshoe crab eggs", "The biotic community and its abiotic environment",
+			"This small bird feeds on horseshoe crab eggs", "The biotic community and its abiotic environment",
 			"A partially enclosed body of water where two different bodies of water meet and mix",
 			"The arrangement of organisms detailing the order in which things are produced/consumed.",
 			"Organism that manufactures its own food energy by photosynthesis. Green plants and some bacteria are producers.",
@@ -21,20 +20,36 @@ public class PowerUp extends NPC {
 			"Microscopic photosynthesizing organisms that drift with the currents; microalgae including diatoms and dinoflagellates. ",
 			"process by which plants, using chlorophyll and/or other photosynthetic pigments, manufacture food energy from sunlight & CO2, generating O2 as a byproduct. ",
 			"An inherited change in a living thing that helps it survive better in its environment. ",
-			"Animal plankton; many are microscopic but include larger animals such as jellyfish. Some, such as copepods, remain plankton for entire life cycle, while others, such as crabs, are planktonic only during larval stages. ",
+			" When an animal ________, they travel a long-distance, to a find a new habitat temporarily, usually on a seasonal basis.  ",
 			"The particular part of the environment where a plant or animal naturally lives. ",
-			"Structure that demonstrates the movement of food energy through an ecosytem. Producers (plants) serve as the foundation level and an apex consumer is at the top level.",
+			"Structure that demonstrates the movement of food energy through an ecosytem. “Producers” (plants) serve as the foundation level and an apex consumer is at the top level.",
 			"A network of interacting food chains. ",
-			"Microorganism that breaks down dead tissue and returns the nutrients to the ecosystem.",
+			"True or False: A microorganism that breaks down dead tissue and returns the nutrients to the ecosystem is called a Decomposer",
 			"Organism that feeds upon something else.",
-			"Level within a food pyramid demonstrating an organism's place in the feeding order within an ecosystem. "
+			"Level within a food pyramid demonstrating an organism’s place in the feeding order within an ecosystem. "
 
 	};
 
-	private static final String[] answers = { "horseshoe crab", "true", "salt", "red knot", "ecosystem", "estuary",
-			"food chain", "producer", "predator", "prey", "phytoplankton", "photosynthesis", "adaptation",
-			"zooplankton", "habitat", "food pyramid", "food web", "decomposer", "consumer", "trophic level"
-
+	private static final String[] answers = { "horseshoe crab",
+			"true",
+			"salt",
+			"red knot",
+			"ecosystem",
+			"estuary",
+			"food chain",
+			"producer",
+			"predator",
+			"prey",
+			"phytoplankton",
+			"photosynthesis",
+			"adaptation",
+			"migrates",
+			"habitat",
+			"food pyramid",
+			"food web",
+			"true",
+			"consumer",
+			"trophic level"
 	};
 
 	/**
