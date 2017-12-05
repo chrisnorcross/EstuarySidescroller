@@ -29,7 +29,7 @@ public class View extends JFrame{
 	private GamePanel panel;
 	private ArrayList<NPC> obstacles;
 	private Player player;
-	private Board board;
+	//private Board board;  //XXX I REMOVED BOARD!!! - ERIC
 	public static BufferedImage RedKnotPlayerImage;
 	public static BufferedImage TutorialBackground;
 	public static BufferedImage FishPlayerImage;

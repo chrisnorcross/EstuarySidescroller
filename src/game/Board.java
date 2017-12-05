@@ -87,7 +87,9 @@ public class Board /*implements KeyListener*/{
 				removes.add(o);
 				continue;
 			}
+			
 			//TODO WHAT DOES THIS DO? -- Eric Can we change the +50 and -50 to something else?
+			
 			if ((o.getYloc() < player.getYloc()+50) &&//HERE
 					(o.getYloc() > player.getYloc()-50) &&//HERE
 				(player.getXloc() < o.getXloc()) && 
@@ -121,7 +123,7 @@ public class Board /*implements KeyListener*/{
 		timer++;
 		if (timer%3000 ==0) {
 			STATE = "Over";
-			scores.add(Integer.toString(player.score));
+			scores.add(Integer.toString(Player.score));
 			Board.scores.sort(null);
 			Collections.reverse(scores);
 			return;
@@ -132,7 +134,7 @@ public class Board /*implements KeyListener*/{
 		moveNPCs();
 		if (player.health <= 0) {
 			STATE = "Over";
-			scores.add(Integer.toString(player.score));
+			scores.add(Integer.toString(Player.score));
 			Board.scores.sort(null);
 			Collections.reverse(scores);
 			return;
@@ -152,7 +154,6 @@ public class Board /*implements KeyListener*/{
 	/**
 	 * Reset game to it's initial state
 	 */
-	//FIXME: Does this need a static modifier or just public void reset(){}???
 	public static void reset() {
 		STATE = "Menu";
 		Board.timer = 0;

@@ -6,7 +6,7 @@ package game;
 
 //TODO can you type in the answer to the question below? Thanks
 // ERIC QUESTION: Do we use jumpUP or jumpDown or do we only use the accel now?
-//FIXME: Eric changed this.score to Player.score
+//FIXME: (FIXED) Eric changed this.score to Player.score
 
 
 public class Player extends Character {

@@ -48,7 +48,7 @@ public class Main {
 		View view = new View(frameWidth,frameHeight, board.getObstacles(), board.getPlayer(),board, hiscores);
 		Controller controller = new Controller(board,view);
 		
-		//IF NOT USING FULL SCREEN COMMENT OUT
+		//COMMENT OUT, IF NOT USING FULL SCREEN
 		view.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		

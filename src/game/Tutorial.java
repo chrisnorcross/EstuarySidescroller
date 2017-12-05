@@ -8,6 +8,7 @@ import java.awt.Rectangle;
 
 //FIXME: The drawstring with text need to be fixed to fit on the screen (and different size screens)
 //XXX  Need to adjust the images for the final version keeping coordinates
+
 public class Tutorial {
 	public Rectangle menuButton = new Rectangle(5*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
 	public Rectangle characterButton = new Rectangle(4*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);

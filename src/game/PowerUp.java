@@ -10,7 +10,7 @@ public class PowerUp extends NPC {
 	 * Questions
 	 */
 	
-	//TODO: Alter the frequency of the powerups. Need less?? MAYBE NOT???
+	//TODO: Alter the frequency of the power ups. Need less?? MAYBE NOT???
 	
 	private static final String[] questions = {
 			 			"What animal has valuable blue blood?",
