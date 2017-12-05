@@ -44,7 +44,9 @@ public class View extends JFrame{
 	public static BufferedImage TrashNPCImage2;
 	public static BufferedImage FoodNPCImage;
 	public static BufferedImage Background;
-	public static BufferedImage BackgroundFlip;
+	public static BufferedImage BackgroundFish;
+	public static BufferedImage BackgroundBird;
+	public static BufferedImage BackgroundCrab;
 	public Menu menu;
 	public HighScorePage hiscores;
 	/**
@@ -57,11 +59,11 @@ public class View extends JFrame{
 	 */
 	public View(int width, int height, ArrayList<NPC> obstacles, Player player, Board board, HighScorePage hiscores){
 		try {
-			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));
+			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));
 			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
 			CrabPlayerImage = ImageIO.read(new File("Resources/images/crab_cartoon.png"));//CRAB CHANGE
-			BirdPlayerImage = ImageIO.read(new File("Resources/images/Angry_Birds.png"));//BIRD CHANGE
+			BirdPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));//BIRD CHANGE
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
 			TrashNPCImages[1] = ImageIO.read(new File("Resources/images/car-tire-png-479.png"));
@@ -72,7 +74,8 @@ public class View extends JFrame{
 			FishNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			FoodNPCImages[0] = FishNPCImage;
 			FoodNPCImages[1] = PowerUpNPCImage;
-			BackgroundFlip = ImageIO.read(new File("Resources/images/backgroundfinal.png"));
+			BackgroundFish = ImageIO.read(new File("Resources/images/backgroundfinal.png"));
+			BackgroundBird = ImageIO.read(new File("Resources/images/background bird final.png"));
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -199,8 +202,8 @@ class GamePanel extends JPanel implements KeyListener{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		if(Board.STATE=="GameFish") {
-			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFish, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFish, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (NPC o : obstacles){
 				if (o.getIsGarbage()) {
 					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
@@ -214,8 +217,8 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
 		}else if(Board.STATE=="GameCrab") {
-				g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-				g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+				g.drawImage(View.BackgroundFish, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+				g.drawImage(View.BackgroundFish, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 				for (NPC o : obstacles){
 					if (o.getIsGarbage()) {
 						g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
@@ -229,8 +232,8 @@ class GamePanel extends JPanel implements KeyListener{
 				g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 				g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
 		}else if(Board.STATE=="GameBird") {
-			g.drawImage(View.BackgroundFlip, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.BackgroundFlip, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundBird, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundBird, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			for (NPC o : obstacles){
 				if (o.getIsGarbage()) {
 					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
@@ -244,7 +247,7 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
 		}else if(Board.STATE == "Menu") {
-			g.drawImage(View.BackgroundFlip,  0, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFish,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			menu.render(g);
 		}else if(Board.STATE == "Tutorial"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
