@@ -147,6 +147,9 @@ public class Player extends Character {
 	 */
 	public void changeScore(int value) {
 		score += value;
+		if (score<=0) {
+			score =0;
+		}
 	}
 
 	/**
@@ -154,6 +157,9 @@ public class Player extends Character {
 	 */
 	public void takeDamage(int dmg) {
 		health +=  dmg;
+		if(health<=0) {
+			health = 0;
+		}
 	}
 
 	/* 

@@ -18,9 +18,9 @@ public class Board /*implements KeyListener*/{
 	public boolean isGameOver; 
 	public static String STATE = "Menu";
 	public static String prevState = "";
-	public static List<String> scoresfish = new ArrayList<>(Collections.nCopies(5, ""));
-	public static List<String> scorescrab = new ArrayList<>(Collections.nCopies(5, ""));
-	public static List<String> scoresbird = new ArrayList<>(Collections.nCopies(5, ""));
+	public static List<Integer> scoresfish = new ArrayList<>(Collections.nCopies(5, 0));
+	public static List<Integer> scorescrab = new ArrayList<>(Collections.nCopies(5, 0));
+	public static List<Integer> scoresbird = new ArrayList<>(Collections.nCopies(5, 0));
 
 	public int scorequantity=0;
 	/*
@@ -127,18 +127,18 @@ public class Board /*implements KeyListener*/{
 		timer++;
 		if (timer%3000 ==0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(Player.score));
-				Board.scoresfish.sort(null);
+				scoresfish.add(Player.score);
+				Collections.sort(scoresfish);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(Player.score));
-				Board.scorescrab.sort(null);
+				scorescrab.add(Player.score);
+				Collections.sort(scorescrab);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(Player.score));
-				Board.scoresbird.sort(null);
+				scoresbird.add(Player.score);
+				Collections.sort(scoresbird);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
 			}
@@ -151,19 +151,18 @@ public class Board /*implements KeyListener*/{
 		moveNPCs();
 		if (player.health <= 0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(Player.score));
-				Board.scoresfish.sort(null);
+				scoresfish.add(Player.score);
+				Collections.sort(scoresfish);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
-				System.out.println(scoresfish.get(0));
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(Player.score));
-				Board.scorescrab.sort(null);
+				scorescrab.add(Player.score);
+				Collections.sort(scorescrab);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(Player.score));
-				Board.scoresbird.sort(null);
+				scoresbird.add(Player.score);
+				Collections.sort(scoresbird);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
 			}
