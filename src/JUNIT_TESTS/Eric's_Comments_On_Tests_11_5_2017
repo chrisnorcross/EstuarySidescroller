@@ -36,25 +36,15 @@ BLUE IMPORTANT MARKS
 - View = 4 ** commented out board
 
 
-I changed player.score to Player.score and this.score to Player.score.
-I commented out board in the view.
-@SuppressWarnings("static-access") for PlayerTest reset
-Increased game play time from 2000 to 3000
-- DONE: Prevent player from leaving the screen - CHRIS 
-
-
-
-
 MAIN TO DO'S:
 - Fix tutorial get working and connected - JAMA
-- Should the student be told if they are right or wrong... shown correct answer for a few seconds.
-- How power up questions are displaced -- I don't think we do this. In the tutorial for power ups say to enter the name spelled correctly in all lower case letters
+- In the tutorial for power ups say to enter the name spelled correctly in all lower case letters
+
 - Load in final images - Chris
-- Game play for crab-- Idk how... Chris of Bruce
 
-Change what the bird eats and has to dodge
+Change what the bird and crab has to eats and what they have to dodge
 
-
+if you click cancel on the power up screen the game terminates
 
 QUESTIONS:
 https://coast.noaa.gov/data/estuaries/pdf/estuary-food-pyramid-teacher-guide.pdf

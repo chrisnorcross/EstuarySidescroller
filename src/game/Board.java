@@ -89,11 +89,10 @@ public class Board /*implements KeyListener*/{
 				removes.add(o);
 				continue;
 			}
-			//TODO WHAT DOES THIS DO? -- Eric Can we change the +50 and -50 to something else?
-			if ((o.getYloc() < player.getYloc()+50) &&//HERE
-					(o.getYloc() > player.getYloc()-50) &&//HERE
+			if ((o.getYloc() < player.getYloc()+50) &&
+					(o.getYloc() > player.getYloc()-50) &&
 				(player.getXloc() < o.getXloc()) && 
-						(o.getXloc() < player.getXloc()+50))  {//HERE 
+						(o.getXloc() < player.getXloc()+50))  {
 				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
 					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
 					 
