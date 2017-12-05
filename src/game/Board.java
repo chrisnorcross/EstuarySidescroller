@@ -21,7 +21,6 @@ public class Board /*implements KeyListener*/{
 	public static String STATE = "Menu";
 	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
 	public int scorequantity=0;
-	//XXX  Removed frameWidth and frameHeight from here because they are declared and used from the Main
 	/*
 	public static void main(String[] args) {
 		Board board = new Board();
@@ -51,7 +50,6 @@ public class Board /*implements KeyListener*/{
 		isGameOver = false;
 	}
 	
-	//JUNIT
 	/**
 	 * modelInConsole
 	 * @param n
@@ -68,7 +66,6 @@ public class Board /*implements KeyListener*/{
 		
 	}
 	
-	//JUNIT
 	/**
 	 * removeNPC 
 	 * @param i
@@ -78,7 +75,6 @@ public class Board /*implements KeyListener*/{
 		obstacles.remove(i);
 	}
 	
-	//JUNIT
 	/**
 	 * moveNPC pieces
 	 * updates and removes
@@ -122,10 +118,8 @@ public class Board /*implements KeyListener*/{
 	 * updates the game state on the board
 	 */
 	public void update() {
-		//System.out.println(STATE);
 		timer++;
-		//XXX Are we all good on the timer being 2000?
-		if (timer%2000 ==0) {
+		if (timer%3000 ==0) {
 			STATE = "Over";
 			scores.add(Integer.toString(player.score));
 			Board.scores.sort(null);
@@ -168,7 +162,6 @@ public class Board /*implements KeyListener*/{
 
 	}
 	
-	//JUNIT
 	/**
 	 * checks to see if game is over
 	 * @return boolean isGameOver
@@ -177,7 +170,6 @@ public class Board /*implements KeyListener*/{
 		return isGameOver;
 	}
 
-	//JUNIT
 	/**getObstacts an arraylist of obstacle instances
 	 * @return obstacles
 	 */
@@ -185,7 +177,6 @@ public class Board /*implements KeyListener*/{
 		return obstacles;
 	}
 
-	//JUNIT
 	/**
 	 * getPlayer()
 	 * gets an instance of a player

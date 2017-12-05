@@ -5,10 +5,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-//XXX FIXED TUTORIAL: TEXT AND IMAGE POSITION FOR RESIZING 
 
 //FIXME: The drawstring with text need to be fixed to fit on the screen (and different size screens)
-//XXX I added buttons and set the images firmly through view. Need to adjust the images for the final version keeping coordiantes
+//XXX  Need to adjust the images for the final version keeping coordinates
 public class Tutorial {
 	public Rectangle menuButton = new Rectangle(5*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
 	public Rectangle characterButton = new Rectangle(4*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);

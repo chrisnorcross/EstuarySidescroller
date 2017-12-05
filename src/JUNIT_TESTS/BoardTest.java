@@ -15,7 +15,7 @@ import game.NPC;
 
 
 public class BoardTest {
-	// NOT TESTED: Update
+
 	@Test
 	public void testGameIsOver(){
 		Board b1 = new Board();
@@ -47,11 +47,9 @@ public class BoardTest {
 	}
 	@Test
 	public void testGetObstacles(){
-		//ArrayList<NPC> getObstacles() {
 		Board b1 = new Board();
 		ArrayList<String> a1 = new ArrayList<String>(); // empty arraylist
 		b1.getObstacles();
-		//System.out.println(b1.getObstacles());
 		assertEquals("No obstacles have been created yet",a1,b1.getObstacles());
 		NPC n = new NPC();
 		NPC n2 = new NPC();
@@ -76,11 +74,8 @@ public class BoardTest {
 		b1.obstacles.add(n);
 		b1.obstacles.add(n2);
 
-		//System.out.println(b1.obstacles.size());
-
 		b1.moveNPCs();
 		
-		//System.out.println(b1.obstacles.size());
 		assertEquals("Obstacles have been removed",0,b1.getObstacles().size());
 		assertNotEquals("Obstacles have been removed",2,b1.getObstacles().size());
 
@@ -98,14 +93,9 @@ public class BoardTest {
 		b1.obstacles.add(n2);
 		//System.out.println("-------Original-----------");
 
-		//System.out.println(b1.obstacles);
-		//System.out.println(b1.obstacles.size());
 
 		b1.removeNPC(1);
 		//System.out.println("-------Remove 1-----------");
-
-		//System.out.println(b1.obstacles);
-		//System.out.println(b1.obstacles.size());
 		
 		assertEquals("1 of the 2 Obstacles have been removed",1,b1.getObstacles().size());
 		assertNotEquals("None were removed",2,b1.getObstacles().size());
@@ -114,9 +104,7 @@ public class BoardTest {
 		//System.out.println("-------Remove 2 (empty)-----------");
 
 		b1.removeNPC(0);
-		//System.out.println(b1.obstacles);
-		//System.out.println(b1.obstacles.size());
-		
+
 		assertEquals("Obstacles have been removed",0,b1.getObstacles().size());
 		assertNotEquals("Obstacles have been removed",1,b1.getObstacles().size());
 		//System.out.println("------- Add 2 More -----------");
@@ -128,18 +116,15 @@ public class BoardTest {
 
 		b1.obstacles.add(n1);
 		b1.obstacles.add(n3);
-		//System.out.println(b1.obstacles);
 
 		//System.out.println("-------N3-----------");
 
 		ArrayList<String> a1 = new ArrayList<String>();
 		a1.add(n3.toString());
-		//System.out.print(a1);
-		//System.out.println("");
+
 		//System.out.println("-------Remove 1-----------");
 
 		b1.removeNPC(0);
-		//System.out.println(b1.obstacles);
 		assertEquals("make sure the right obstacle remains",a1.toString(),b1.getObstacles().toString());
 
 

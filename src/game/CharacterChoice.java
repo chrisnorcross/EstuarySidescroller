@@ -9,11 +9,9 @@ public class CharacterChoice {
 	public Rectangle FishButton = new Rectangle(1*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
 	public Rectangle CrabButton = new Rectangle(2*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
 	public Rectangle BirdButton = new Rectangle(3*Main.frameWidth/4,Main.frameHeight/2,Main.frameWidth/7,Main.frameHeight/8);
-	//XXX Added menu button
 	public Rectangle MenuButton = new Rectangle(4*Main.frameWidth/5,Main.frameHeight/4*3,Main.frameWidth/7,Main.frameHeight/8);
 
 	public void render(Graphics g) {
-		//XXX Changed font sizes to be consistent
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/10);
 		Font font1 = new Font("arial", Font.BOLD,Main.frameHeight/14);
 		g.setFont(font);

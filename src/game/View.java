@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 //TODO add final version of pictures for the game
 //TODO get crab and bird playing how we want
 
-//XXX good for resizing images... I think paintComponent is complete now just need to give right pics to game
+//XXX I think paintComponent is complete now just need to give right pics to game
 //XXX Not sure about: paint component (g.drawImage) and view constructor for different games
 
 public class View extends JFrame{
@@ -196,7 +196,6 @@ class GamePanel extends JPanel implements KeyListener{
 	 *  filling since the component is square
 	 */
 	
-	//XXX made a bunch of changes to this
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		if(Board.STATE=="GameFish") {

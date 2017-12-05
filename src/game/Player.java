@@ -6,7 +6,6 @@ package game;
 
 //TODO can you type in the answer to the question below? Thanks
 // ERIC QUESTION: Do we use jumpUP or jumpDown or do we only use the accel now?
-// Changed players starting point from 100 to frameWidth/12 (120) which for 13" mac (1440 width)
 
 public class Player extends Character {
 	static int score = 0;
@@ -15,7 +14,6 @@ public class Player extends Character {
 	int verticalVelocity;
 	boolean isAccel;
 	
-	//JUNIT
 	/**
 	 * Creates an instance of a player, with attributes xloc,yloc, and lane
 	 */
@@ -48,20 +46,21 @@ public class Player extends Character {
 			yloc = 0;
 		}
 	}
-	//JUNIT
+	
 	/**
 	 * Getter for player health, returns an int
 	 */
 	public int getHealth() {
 		return health;
 	}
-	//JUNIT
+
 	/**
 	 * Increments the number of food that this object has "eaten"
 	 */
 	public void eatFood() {
 		this.food++;
 	}
+	
 	/**
 	 * move upwards
 	 */
@@ -69,6 +68,7 @@ public class Player extends Character {
 		verticalVelocity = -5;
 		isAccel = true;
 	}
+	
 	/**
 	 *  move downwards
 	 */
@@ -76,6 +76,7 @@ public class Player extends Character {
 		verticalVelocity = 5;
 		isAccel = true;
 	}
+	
 	/**
 	 * sets acceleration of vertical Velocity
 	 */
@@ -85,13 +86,14 @@ public class Player extends Character {
 		if (verticalVelocity > -6)
 				verticalVelocity += -2;
 	}
+	
 	/**
 	 * stop acceleration sets to false
 	 */
 	public void stop() {
 		isAccel = false;
 	}
-	//JUNIT
+
 	/**
 	 * checks to see if there is a lane above the player. if there is, moves them up into that lane/increments lane, and updates yloc
 	 * returns void
@@ -102,7 +104,7 @@ public class Player extends Character {
 			yloc = Main.frameHeight - (lane * (Main.frameHeight / 5));
 		}
 	}
-	//JUNIT
+
 	/**
 	 * checks to see if there is a lane under the player. if there is, moves them down into that lane/decrements lane, and updates yloc
 	 * returns void
@@ -114,7 +116,7 @@ public class Player extends Character {
 		}
 	}
 	
-	//JUNIT
+
 	/** 
 	 * getter of x location
 	 * (non-Javadoc)
@@ -124,7 +126,7 @@ public class Player extends Character {
 	public int getXloc() {
 		return xloc;
 	}
-	//JUNIT
+
 	/**
 	 * getScore
 	 * returns the current player objects score
@@ -133,29 +135,29 @@ public class Player extends Character {
 		return this.score;
 	}
 	
-	// JUNIT
+
 	/**
 	 * @param int i is the score you want to set for the current player
 	 */
 	public void setScore(int i) {
 		this.score = i;
 	}
-	// JUNIT
+
 	/**
 	 * @param changes current player objects score by the given value input
 	 */
 	public void changeScore(int value) {
 		score += value;
 	}
-	// JUNIT
+
 	/**
 	 * @param Decrements health. dmg is the amount you decrement the current player objects health by
 	 */
 	public void takeDamage(int dmg) {
 		health +=  dmg;
 	}
-	//JUNIT
-	/* (non-Javadoc)
+
+	/* 
 	 * @see java.lang.Object#toString()
 	 */
 	public String toString() {

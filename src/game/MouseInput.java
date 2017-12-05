@@ -5,16 +5,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /**
- * @author ericallen Listener for mouse input
+ * @author ericallen Listener for mouse input, adjustable to various screen sizes
  */
-///XXX I did a lot of things. Made it work for any size screen and added buttons and fixed old ones
 
 public class MouseInput implements MouseListener {
 
 	/*
-	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseClicked(java.awt.event.MouseEvent)
-	 * Default
 	 */
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -22,9 +19,7 @@ public class MouseInput implements MouseListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseEntered(java.awt.event.MouseEvent)
-	 * Default
 	 */
 	@Override
 	public void mouseEntered(MouseEvent e) {
@@ -32,9 +27,7 @@ public class MouseInput implements MouseListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mouseExited(java.awt.event.MouseEvent)
-	 * Default
 	 */
 	@Override
 	public void mouseExited(MouseEvent e) {
@@ -42,9 +35,7 @@ public class MouseInput implements MouseListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * @see java.awt.event.MouseListener#mousePressed(java.awt.event.MouseEvent)
-	 * Listens for mouse input and makes corrosponding move
 	 */
 	@Override
 	public void mousePressed(MouseEvent e) {
@@ -77,8 +68,8 @@ public class MouseInput implements MouseListener {
 		}
 
 		if (Board.STATE == "Character") {
-			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + Main.frameWidth/7) { // changed from 100 to 105 to fill buttom
-				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+Main.frameHeight/8) { // changed from 50 to 90 to fill button
+			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + Main.frameWidth/7) { 
+				if (my >= Main.frameHeight/2 && my <= Main.frameHeight/2+Main.frameHeight/8) { 
 					Board.STATE = "GameFish";
 				}
 			}

@@ -29,14 +29,13 @@ import javax.swing.JFrame;
  */
 
 
-//FIXME: for JUnit tests frameWidth/Height are not declared until runtime. How do we test with no values. 
-//FIXME: I just set the value without the final... verify that it resets with frameWidth/height correctly on your computer 
+// For JUnit tests frameWidth/Height are not declared until runtime. How do we test with no values. 
+// I just set the value without the final... verify that it resets with frameWidth/height correctly on your computer 
 
 public class Main {
 	public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	//XXX IMPORTANT: I ONLY HAVE IN FOR TESTING PURPOSES
-	public static int frameWidth = 1440;// = 700; //delete unless partial screen
-	public static int frameHeight=900;// = 500; //delete unless partial screen
+	public static int frameWidth = 1440;// = 700; //delete unless partial screen// keep for testing
+	public static int frameHeight=900;// = 500; //delete unless partial screen// keep for testing
 	
 	public static void main(String[] args) {
 		frameWidth =(int) screenSize.getWidth();
@@ -49,7 +48,7 @@ public class Main {
 		View view = new View(frameWidth,frameHeight, board.getObstacles(), board.getPlayer(),board, hiscores);
 		Controller controller = new Controller(board,view);
 		
-		//XXX IF NOT USING FULL SCREEN COMMENT OUT
+		//IF NOT USING FULL SCREEN COMMENT OUT
 		view.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		

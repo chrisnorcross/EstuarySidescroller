@@ -12,8 +12,6 @@ import java.awt.Rectangle;
  * once clicked with the mouse input it directs to that location. Menu drawn in paint
  */
 
-//XXX cleaned it up, centered stuff, made it look nicer
-
 public class Menu {
 	
 	public Rectangle PlayButton = new Rectangle(3*Main.frameWidth/7, 3*Main.frameHeight/12,Main.frameWidth/8,Main.frameHeight/10);

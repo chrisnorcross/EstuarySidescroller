@@ -10,9 +10,8 @@ public class PowerUp extends NPC {
 	 * Questions
 	 */
 	
-	//TODO: Add more questions and answers
-	//TODO: Alter the frequency of the powerups. Need less
-	//FIXME: Do not let the game ask duplicate questions
+	//TODO: Alter the frequency of the powerups. Need less?? MAYBE NOT???
+	
 	private static final String[] questions = {
 			 			"What animal has valuable blue blood?",
 			 			"True or false: Humans are a threat to estuaries.",
@@ -57,11 +56,7 @@ public class PowerUp extends NPC {
 			 			"food web",
 			 			"decomposer",
 			 			"consumer",
-			 			"trophic level"
-			 			
-			 			
-			 			
-			 			
+			 			"trophic level"	
 			 			
 			 	};
 			 	
@@ -72,7 +67,7 @@ public class PowerUp extends NPC {
 			 	public PowerUp() {
 			 		value = 300;
 			 	}
-			 	/* (non-Javadoc)
+			 	/* 
 			 	 * @see game.NPC#getValue()
 			 	 * get value
 			 	 */
