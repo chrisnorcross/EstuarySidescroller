@@ -152,6 +152,7 @@ public class Board /*implements KeyListener*/{
 	/**
 	 * Reset game to it's initial state
 	 */
+	//FIXME: Does this need a static modifier or just public void reset(){}???
 	public static void reset() {
 		STATE = "Menu";
 		Board.timer = 0;
