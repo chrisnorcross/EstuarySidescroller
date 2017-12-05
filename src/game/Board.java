@@ -96,13 +96,17 @@ public class Board /*implements KeyListener*/{
 				if (View.FoodNPCImages[o.image] == View.PowerUpNPCImage && !o.isGarbage) {
 					 String[] questionAndAnswer = PowerUp.getQuestionAndAnswer();
 					 String answer = JOptionPane.showInputDialog(null, questionAndAnswer[0], "Power Up Question!", JOptionPane.QUESTION_MESSAGE);
-					 if (answer == questionAndAnswer[1]) {
-						 JOptionPane.showMessageDialog(null, "Correct! 400 Points!");
-						 player.changeScore(3*o.getValue());
-					 }else {
-						 JOptionPane.showMessageDialog(null, "Sorry! The correct answer was: "+questionAndAnswer[1]+". Keep trying!");
-						 player.changeScore(-o.getValue());
+					 System.out.println(answer);
+					 System.out.println(questionAndAnswer[1]);
+					 if (answer!=null) {
+						 if (answer.matches(questionAndAnswer[1])) {
+							 JOptionPane.showMessageDialog(null, "Correct! 400 Points!");
+							 player.changeScore(3*o.getValue());
+						 }else{
+							 JOptionPane.showMessageDialog(null, "Sorry! The correct answer was: "+questionAndAnswer[1]+". Keep trying!");
+							 player.changeScore(-o.getValue());
 						 }
+					 }
 					 player.stop();
 				}
 				System.out.println("Collision value:" + o.getValue() + " (+100 means food, -100 means garbage).");

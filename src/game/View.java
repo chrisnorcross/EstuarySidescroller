@@ -60,7 +60,7 @@ public class View extends JFrame{
 			RedKnotPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));
 			TutorialBackground = ImageIO.read(new File("Resources/images/underwater-vector-background_73437.jpg"));
 			FishPlayerImage = ImageIO.read(new File("Resources/images/Fish_East_1.png"));
-			CrabPlayerImage = ImageIO.read(new File("Resources/images/crab_cartoon.png"));//CRAB CHANGE
+			CrabPlayerImage = ImageIO.read(new File("Resources/images/Crab_Transparent_PNG_Image.png"));//CRAB CHANGE
 			BirdPlayerImage = ImageIO.read(new File("Resources/images/Flying-Bird-Transparent-Background.png"));//BIRD CHANGE
 			TrashNPCImages = new BufferedImage[2];
 			TrashNPCImages[0] = ImageIO.read(new File("Resources/images/trash-bag.png"));
@@ -68,7 +68,7 @@ public class View extends JFrame{
 			FoodNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			Background = ImageIO.read(new File("Resources/images/background.PNG"));
 			FoodNPCImages = new BufferedImage[2];
-			PowerUpNPCImage = ImageIO.read(new File("Resources/images/PowerUp.jpg"));
+			PowerUpNPCImage = ImageIO.read(new File("Resources/images/2000px-Red_exclamation_mark.svg.png"));
 			FishNPCImage = ImageIO.read(new File("Resources/images/Fish_dead_east.png"));
 			FoodNPCImages[0] = FishNPCImage;
 			FoodNPCImages[1] = PowerUpNPCImage;
