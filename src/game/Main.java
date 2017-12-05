@@ -48,6 +48,7 @@ public class Main {
 		Controller controller = new Controller(board,view);
 		
 		//COMMENT OUT, IF NOT USING FULL SCREEN
+		//view.setUndecorated(true);
 		view.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		
