@@ -19,7 +19,11 @@ public class Board /*implements KeyListener*/{
 	public static ArrayList<NPC> obstacles;
 	public boolean isGameOver; 
 	public static String STATE = "Menu";
-	public static List<String> scores = new ArrayList<>(Collections.nCopies(5, ""));
+	public static String prevState = "";
+	public static List<String> scoresfish = new ArrayList<>(Collections.nCopies(5, ""));
+	public static List<String> scorescrab = new ArrayList<>(Collections.nCopies(5, ""));
+	public static List<String> scoresbird = new ArrayList<>(Collections.nCopies(5, ""));
+
 	public int scorequantity=0;
 	/*
 	public static void main(String[] args) {
@@ -120,10 +124,23 @@ public class Board /*implements KeyListener*/{
 	public void update() {
 		timer++;
 		if (timer%3000 ==0) {
+			if (STATE == "GameFish") {
+				scoresfish.add(Integer.toString(player.score));
+				Board.scoresfish.sort(null);
+				Collections.reverse(scoresfish);
+				prevState = "GameFish";
+			}else if(STATE == "GameCrab") {
+				scorescrab.add(Integer.toString(player.score));
+				Board.scorescrab.sort(null);
+				Collections.reverse(scorescrab);
+				prevState = "GameCrab";
+			}else {
+				scoresbird.add(Integer.toString(player.score));
+				Board.scoresbird.sort(null);
+				Collections.reverse(scoresbird);
+				prevState = "GameBird";
+			}
 			STATE = "Over";
-			scores.add(Integer.toString(player.score));
-			Board.scores.sort(null);
-			Collections.reverse(scores);
 			return;
 		}
 		player.updateMovement();
@@ -131,10 +148,24 @@ public class Board /*implements KeyListener*/{
 		boolean isThereSpace = true;
 		moveNPCs();
 		if (player.health <= 0) {
+			if (STATE == "GameFish") {
+				scoresfish.add(Integer.toString(player.score));
+				Board.scoresfish.sort(null);
+				Collections.reverse(scoresfish);
+				prevState = "GameFish";
+				System.out.println(scoresfish.get(0));
+			}else if(STATE == "GameCrab") {
+				scorescrab.add(Integer.toString(player.score));
+				Board.scorescrab.sort(null);
+				Collections.reverse(scorescrab);
+				prevState = "GameCrab";
+			}else {
+				scoresbird.add(Integer.toString(player.score));
+				Board.scoresbird.sort(null);
+				Collections.reverse(scoresbird);
+				prevState = "GameBird";
+			}
 			STATE = "Over";
-			scores.add(Integer.toString(player.score));
-			Board.scores.sort(null);
-			Collections.reverse(scores);
 			return;
 		}
 		NPC newNpc = new NPC();
