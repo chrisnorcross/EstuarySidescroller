@@ -45,6 +45,7 @@ public class PlayerTest {
 
 	}
 	
+	@SuppressWarnings("static-access")
 	@Test
 	public void testEatFood(){
 		Board b1 = new Board();

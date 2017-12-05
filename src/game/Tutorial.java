@@ -16,18 +16,19 @@ public class Tutorial {
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/Main.frameHeight/25);
 		Font font3 = new Font("arial", Font.BOLD,Main.frameHeight/20);
 		Font font2 = new Font("calibri", Font.BOLD,Main.frameHeight/14);
+		
+		
+		// FIX
 		g.setFont(font);
 		g.drawString("This is a Striped Bass. It grows big and strong by eating dead fish." , Main.frameWidth/4, Main.frameHeight/3 -50);
-		g.setFont(font);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*" , Main.frameWidth/4, Main.frameHeight/3+Main.frameHeight/15-50);
-		g.setFont(font);
 		g.drawString("This is a Red Knot. It is a small bird that fattens up by eating horseshoe crab eggs." , Main.frameWidth/4, Main.frameHeight/2-50);
-		g.setFont(font);
 		g.drawString("*To stay big, avoid grass and clouds of pollution.*" , Main.frameWidth/4, Main.frameHeight/2+Main.frameHeight/15-50);
-		g.setFont(font);
 		g.drawString("This is a Horseshoe Crab. It grows big and strong by eating clams." , Main.frameWidth/4, Main.frameHeight/2+100);
-		g.setFont(font);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*" , Main.frameWidth/4, Main.frameHeight/2+Main.frameHeight/15+100);
+		
+		
+		
 		g.setFont(font2);
 		g.setColor(Color.black);
 		g.drawString("HOW TO PLAY",2*Main.frameWidth/7, Main.frameHeight/7);

@@ -1,6 +1,4 @@
 package game;
-//import java.awt.event.KeyEvent;
-//import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -125,17 +123,17 @@ public class Board /*implements KeyListener*/{
 		timer++;
 		if (timer%3000 ==0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(player.score));
+				scoresfish.add(Integer.toString(Player.score));
 				Board.scoresfish.sort(null);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(player.score));
+				scorescrab.add(Integer.toString(Player.score));
 				Board.scorescrab.sort(null);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(player.score));
+				scoresbird.add(Integer.toString(Player.score));
 				Board.scoresbird.sort(null);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
@@ -149,18 +147,18 @@ public class Board /*implements KeyListener*/{
 		moveNPCs();
 		if (player.health <= 0) {
 			if (STATE == "GameFish") {
-				scoresfish.add(Integer.toString(player.score));
+				scoresfish.add(Integer.toString(Player.score));
 				Board.scoresfish.sort(null);
 				Collections.reverse(scoresfish);
 				prevState = "GameFish";
 				System.out.println(scoresfish.get(0));
 			}else if(STATE == "GameCrab") {
-				scorescrab.add(Integer.toString(player.score));
+				scorescrab.add(Integer.toString(Player.score));
 				Board.scorescrab.sort(null);
 				Collections.reverse(scorescrab);
 				prevState = "GameCrab";
 			}else {
-				scoresbird.add(Integer.toString(player.score));
+				scoresbird.add(Integer.toString(Player.score));
 				Board.scoresbird.sort(null);
 				Collections.reverse(scoresbird);
 				prevState = "GameBird";
