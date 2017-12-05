@@ -168,8 +168,7 @@ public class Board /*implements KeyListener*/{
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {
-//TODO Can we change the -350 to a variable that changes with size? Main.frameWidth/4. What does this do?
-			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth-350)){ 
+			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() >  Main.frameWidth- Main.frameWidth/4)){// about 360 mac was framewidth -350
 				isThereSpace = false;
 			}
 		}
