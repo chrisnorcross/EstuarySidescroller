@@ -69,17 +69,17 @@ public class MouseInput implements MouseListener {
 		}
 
 		if (Board.STATE == "Character") {
-			if (mx >= Main.frameWidth / 4 && mx <= Main.frameWidth / 4 + Main.frameWidth / 7) {
+			if (mx >= 4*Main.frameWidth / 17 && mx <= 4*Main.frameWidth / 17 + Main.frameWidth / 7) {
 				if (my >= Main.frameHeight / 2 && my <= Main.frameHeight / 2 + Main.frameHeight / 8) {
 					Board.STATE = "GameFish";
 				}
 			}
-			if (mx >= 2 * Main.frameWidth / 4 && mx <= 2 * Main.frameWidth / 4 + Main.frameWidth / 7) {
+			if (mx >= 2 * 4*Main.frameWidth / 17 && mx <= 2 *4* Main.frameWidth / 17 + Main.frameWidth / 7) {
 				if (my >= Main.frameHeight / 2 && my <= Main.frameHeight / 2 + Main.frameHeight / 8) {
 					Board.STATE = "GameCrab";
 				}
 			}
-			if (mx >= 3 * Main.frameWidth / 4 && mx <= 3 * Main.frameWidth / 4 + Main.frameWidth / 7) {
+			if (mx >= 3 * 4*Main.frameWidth / 17 && mx <= 3 *4* Main.frameWidth / 17 + Main.frameWidth / 7) {
 				if (my >= Main.frameHeight / 2 && my <= Main.frameHeight / 2 + Main.frameHeight / 8) {
 					Board.STATE = "GameBird";
 				}

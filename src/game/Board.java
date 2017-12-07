@@ -170,12 +170,7 @@ public class Board /* implements KeyListener */ {
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {
-			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth - Main.frameWidth / 4)) {// about
-																												// 360
-																												// mac
-																												// was
-																												// framewidth
-																												// -350
+			if ((o.getLane() == newNpc.getLane()) && (o.getXloc() > Main.frameWidth - Main.frameWidth / 4)) {
 				isThereSpace = false;
 			}
 		}

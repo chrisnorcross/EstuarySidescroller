@@ -338,11 +338,11 @@ class GamePanel extends JPanel implements KeyListener {
 			hiscores.render(g);
 		} else if (Board.STATE == "Character") {
 			g.drawImage(View.TutorialBackground, 0, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.FishPlayerImage, Main.frameWidth / 4 + Main.frameWidth / 32,
+			g.drawImage(View.FishPlayerImage, 4*Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
-			g.drawImage(View.RedKnotPlayerImage, 3 * Main.frameWidth / 4 + Main.frameWidth / 32,
+			g.drawImage(View.CrabPlayerImage, 2 *4* Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
-			g.drawImage(View.CrabPlayerImage, 2 * Main.frameWidth / 4 + Main.frameWidth / 32,
+			g.drawImage(View.RedKnotPlayerImage, 3 * 4*Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
 			choice.render(g);
 		}

@@ -11,11 +11,11 @@ import java.awt.Rectangle;
  *         buttons
  */
 public class CharacterChoice {
-	public Rectangle FishButton = new Rectangle(1 * Main.frameWidth / 4, Main.frameHeight / 2, Main.frameWidth / 7,
+	public Rectangle FishButton = new Rectangle(1 * 4*Main.frameWidth / 17, Main.frameHeight / 2, Main.frameWidth / 7,
 			Main.frameHeight / 8);
-	public Rectangle CrabButton = new Rectangle(2 * Main.frameWidth / 4, Main.frameHeight / 2, Main.frameWidth / 7,
+	public Rectangle CrabButton = new Rectangle(2 * 4*Main.frameWidth / 17, Main.frameHeight / 2, Main.frameWidth / 7,
 			Main.frameHeight / 8);
-	public Rectangle BirdButton = new Rectangle(3 * Main.frameWidth / 4, Main.frameHeight / 2, Main.frameWidth / 7,
+	public Rectangle BirdButton = new Rectangle(3 * 4*Main.frameWidth / 17, Main.frameHeight / 2, Main.frameWidth / 7,
 			Main.frameHeight / 8);
 	public Rectangle MenuButton = new Rectangle(4 * Main.frameWidth / 5, Main.frameHeight / 4 * 3, Main.frameWidth / 7,
 			Main.frameHeight / 8);
@@ -27,10 +27,10 @@ public class CharacterChoice {
 	 */
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD, Main.frameHeight / 10);
-		Font font1 = new Font("arial", Font.BOLD, Main.frameHeight / 14);
+		Font font1 = new Font("arial", Font.BOLD, Main.frameHeight / 16);
 		g.setFont(font);
 		g.setColor(Color.black);
-		g.drawString("Choose your character", Main.frameWidth / 6, Main.frameHeight / 5);
+		g.drawString("Choose your character", 3*Main.frameWidth / 19, Main.frameHeight / 5);
 		g.setFont(font1);
 		g.drawString("Fish", (int) Math.round(FishButton.x + FishButton.getWidth() / 5),
 				(int) Math.round(FishButton.y + 2 * FishButton.getHeight() / 3));
