@@ -115,7 +115,6 @@ public class View extends JFrame{
 		
 	}
 	
-	
 	/**
 	 * Handle the key-released event from the text field.
 	 * @param obstacles
@@ -180,7 +179,6 @@ public class View extends JFrame{
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
-
 }
 
 /**
@@ -214,7 +212,6 @@ class GamePanel extends JPanel implements KeyListener{
 				if (o.getIsGarbage()) {
 					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				} else {
-					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
 					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}
 			}
@@ -231,7 +228,6 @@ class GamePanel extends JPanel implements KeyListener{
 					if (o.getIsGarbage()) {
 						g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 					} else {
-						//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
 						g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 					}
 				}
@@ -250,7 +246,6 @@ class GamePanel extends JPanel implements KeyListener{
 					g.drawImage(View.PowerUpNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}	
 				else {
-					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
 					if (o.getLane()==4) {
 						g.drawImage(View.EggNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 					}else {
@@ -271,7 +266,7 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.FishPlayerImage, Main.frameWidth/35+Main.frameWidth/14, Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
 			g.drawImage(View.RedKnotPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 2* Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
-			g.drawImage(View.CrabPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 3*Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);//Eric Added
+			g.drawImage(View.CrabPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 3*Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
 			tutorial.render(g);
 		}else if(Board.STATE=="TutorialFish") {
 			Rectangle menuButton = new Rectangle(5*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
@@ -280,9 +275,7 @@ class GamePanel extends JPanel implements KeyListener{
 			for (NPC o : obstacles){
 				if (o.getIsGarbage()) {
 					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
-					
 				} else {
-					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
 					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 				}
 			}
@@ -300,7 +293,7 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("You can't die in the tutorial, but if you hit two pieces of garbage for real...",Main.frameWidth/4 , 2*Main.frameHeight/3);
 			g.drawString("it's game over!", Main.frameWidth/3, 2*Main.frameHeight/3+Main.frameHeight/12);
 			g.setFont(font2);
-			g.drawString("Got it!",(int)Math.round(menuButton.x+menuButton.getWidth()/8),(int)Math.round(menuButton.y+5*menuButton.getHeight()/7));
+			g.drawString("Got it!",(int)Math.round(menuButton.x+menuButton.getWidth()/20),(int)Math.round(menuButton.y+5*menuButton.getHeight()/7));
 			Graphics2D g2d = (Graphics2D) g;
 			g2d.draw(menuButton);
 		}
@@ -311,10 +304,9 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.FishPlayerImage, Main.frameWidth/4+Main.frameWidth/32,Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);
 			g.drawImage(View.RedKnotPlayerImage,3*Main.frameWidth/4+Main.frameWidth/32, Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);
-			g.drawImage(View.CrabPlayerImage, 2*Main.frameWidth/4 +Main.frameWidth/32, Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);//Eric Added
+			g.drawImage(View.CrabPlayerImage, 2*Main.frameWidth/4 +Main.frameWidth/32, Main.frameHeight/3+Main.frameHeight/14, Main.frameWidth/10, Main.frameHeight/12, this);
 			choice.render(g);
 		}
-		
 		}
 	
 	/**
@@ -325,7 +317,6 @@ class GamePanel extends JPanel implements KeyListener{
         requestFocus();
     }
 	
-
 	@Override
 	/**
 	 * Handles the key-pressed event from the text field. Once a key is pressed, either up or down, the player will move accordingly in that direction. Prints out "Player has jumped to land, once a key is pressed.

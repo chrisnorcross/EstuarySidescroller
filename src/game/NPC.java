@@ -33,7 +33,6 @@ public class NPC extends Character {
 		lane = (int) (Math.random()*5);
 		yloc = (int) (lane * (Main.frameHeight / 5));
 		xloc = Main.frameWidth - 50; 
-		//650 at 700 Width, 1390 at macbook pro 13" width of 1440
 	}
 	
 	/**

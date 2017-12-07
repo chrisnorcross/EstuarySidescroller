@@ -40,7 +40,7 @@ public class Player extends Character {
 			yloc += verticalVelocity;
 			if(yloc>=Main.frameHeight-Main.frameHeight/6) {
 				yloc = Main.frameHeight-(Main.frameHeight/6);		
-				}
+			}
 			if(yloc<=0) {
 				yloc = 0;
 			}

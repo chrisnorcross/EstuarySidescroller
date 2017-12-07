@@ -3,6 +3,11 @@ package game;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * @author jamayusuf
+ * Interactive Tutorial Screen
+ * Uses an instance of player, garbage, food, powerup
+ */
 public class TutorialGame implements KeyListener{
 	Player player = new Player();
 	NPC garbage = new Garbage();
@@ -13,6 +18,9 @@ public class TutorialGame implements KeyListener{
 	TutorialGame(){}
 	
 
+	/* 
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyPressed(KeyEvent key) {
 		int keyCode = key.getKeyCode();
@@ -22,6 +30,9 @@ public class TutorialGame implements KeyListener{
 			player.accelDown();		
 	}
 
+	/* 
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		int keyCode = e.getKeyCode();
@@ -33,6 +44,9 @@ public class TutorialGame implements KeyListener{
 		
 	}
 
+	/* 
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub

@@ -20,10 +20,10 @@ public class Tutorial {
 	 * @param g
 	 */
 	public void render(Graphics g) {
-		Font font = new Font("arial", Font.BOLD,Main.frameHeight/Main.frameHeight/25);
 		Font font3 = new Font("arial", Font.BOLD,Main.frameHeight/40);
 		Font font2 = new Font("calibri", Font.BOLD,Main.frameHeight/14);
-		
+		Font font1 = new Font("calibri", Font.BOLD,Main.frameHeight/16);
+
 		
 		g.setFont(font3);
 		g.setColor(Color.black);
@@ -40,7 +40,7 @@ public class Tutorial {
 		g.setFont(font2);
 		g.setColor(Color.black);
 		g.drawString("HOW TO PLAY",2*Main.frameWidth/7, Main.frameHeight/7);
-		g.setFont(font3);
+		g.setFont(font1);
 		g.drawString("Menu",(int)Math.round(menuButton.x+menuButton.getWidth()/8),(int)Math.round(menuButton.y+5*menuButton.getHeight()/7));
 		g.drawString("Next",(int)Math.round(characterButton.x+characterButton.getWidth()/8),(int)Math.round(characterButton.y+5*characterButton.getHeight()/7));
 		Graphics2D g2d = (Graphics2D) g;
