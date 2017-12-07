@@ -31,22 +31,23 @@ public class Tutorial {
 		g.setFont(font3);
 		g.setColor(Color.black);
 		g.drawString("This is a Striped Bass. It grows big and strong by eating smaller fish. ", Main.frameWidth / 4,
-				Main.frameHeight / 3 - 50);
+				Main.frameHeight / 3 - Main.frameWidth / 29);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*", Main.frameWidth / 4,
-				Main.frameHeight / 3 + Main.frameHeight / 15 - 50);
-		g.drawString(
-				"This is a Red Knot. It is a small bird that fattens up by eating horseshoe crab eggs. It also eats bugs.",
-				Main.frameWidth / 4, Main.frameHeight / 2 - 50);
+				Main.frameHeight / 3 + Main.frameHeight / 15 - Main.frameWidth / 29);
+
+		g.drawString("This is a Red Knot. It is a small bird that fattens up by eating horseshoe crab eggs and bugs.",
+				Main.frameWidth / 4, Main.frameHeight / 2 - Main.frameWidth / 34);// 50
 		g.drawString("*To stay big, avoid clouds of pollution!*", Main.frameWidth / 4,
-				Main.frameHeight / 2 + Main.frameHeight / 15 - 60);
+				Main.frameHeight / 2 + Main.frameHeight / 15 - Main.frameWidth / 27); // 60
+
 		g.drawString("This is a Horseshoe Crab. It grows big and strong by eating fish.", Main.frameWidth / 4,
-				Main.frameHeight / 2 + 120);
+				Main.frameHeight / 2 + Main.frameWidth / 12);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*", Main.frameWidth / 4,
-				Main.frameHeight / 2 + Main.frameHeight / 16 + 120);
+				Main.frameHeight / 2 + Main.frameHeight / 16 + Main.frameWidth / 12);// 120
 		g.drawString("*Up and down arrow keys control the players movement*", Main.frameWidth / 5,
-				Main.frameHeight / 2 + Main.frameHeight / 6 + 140);
+				Main.frameHeight / 2 + Main.frameHeight / 6 + Main.frameWidth / 10); // 140
 		g.drawString("**Eating powerups also increases your score, so look out for them!**", Main.frameWidth / 6,
-				Main.frameHeight / 2 + Main.frameHeight / 4 + 100);
+				Main.frameHeight / 2 + Main.frameHeight / 4 + Main.frameWidth / 14);// 100
 
 		g.setFont(font2);
 		g.setColor(Color.black);

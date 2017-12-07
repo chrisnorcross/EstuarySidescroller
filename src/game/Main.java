@@ -11,24 +11,17 @@ import javax.swing.JFrame;
  */
 
 /**
- * NOTE FOR FULLSCREEN VS PARTIAL SCREEN 
- * If doing anything other than full screen make sure the values for 
- * frameWidth and frameHeights are commented out or removed.
- * EXAMPLE: 
- *  public static int frameWidth;// = 700; //delete the = 700 
- *  public static int frameHeight;// = 500; //delete the = 500 
- *  ALSO COMMENT OUT THE screenSize.getHeight/Width
+ * NOTE FOR FULLSCREEN VS PARTIAL SCREEN If doing anything other than full
+ * screen make sure the values for frameWidth and frameHeights are commented out
+ * or removed. EXAMPLE: public static int frameWidth;// = 700; //delete the =
+ * 700 public static int frameHeight;// = 500; //delete the = 500 ALSO COMMENT
+ * OUT THE screenSize.getHeight/Width
  * 
- *  ***** MAINTAIN A 1.4 to 1.6 Width to Height ratio for best game experience *******
- *  Game buttons and functions still work outside of these dimensions
- ** ****** Recommended Alternate Screen Size Dimensions******
- * Not limited to:
- *1440 Width to 900 Height
- *1000 Width to 625 Height
- * 900 Width to 600 Height
- * 700 Width to 450 Height
- * 600 Width to 400 Height
- * 500 Width to 300 Height
+ * ***** MAINTAIN A 1.4 to 1.6 Width to Height ratio for best game experience
+ * ******* Game buttons and functions still work outside of these dimensions
+ ** ****** Recommended Alternate Screen Size Dimensions****** Not limited to:
+ * 1440 Width to 900 Height 1000 Width to 625 Height 900 Width to 600 Height 700
+ * Width to 450 Height 600 Width to 400 Height 500 Width to 300 Height
  * 
  * If you are doing partial screen make sure you make sure you have the
  * frameHeight and Width commented out in the main also comment out the
@@ -42,9 +35,9 @@ public class Main {
 	public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	// Declares variables and assigns values for testing, reassigned at runtime
 	// to screen dimensions
-	public static int frameWidth = 1440;//		delete unless partial 
-										// screen// keep for testing 
-	public static int frameHeight = 900;//		delete unless partial
+	public static int frameWidth = 1440;// delete unless partial
+										// screen// keep for testing
+	public static int frameHeight = 900;// delete unless partial
 										// screen// keep for testing
 
 	public static void main(String[] args) {
@@ -57,7 +50,7 @@ public class Main {
 		Controller controller = new Controller(board, view);
 
 		// COMMENT OUT, IF NOT USING FULL SCREEN
-	    view.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		view.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 		while (true) {
 			controller.tick();

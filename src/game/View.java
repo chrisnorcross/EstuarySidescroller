@@ -323,11 +323,16 @@ class GamePanel extends JPanel implements KeyListener {
 			g.drawString("Press up and down on the arrowkeys to move.", Main.frameWidth / 3, Main.frameHeight / 3);
 			g.drawString("Avoid the pollution! Aim for the powerups and fish!", Main.frameWidth / 3,
 					Main.frameHeight / 3 + Main.frameHeight / 12);
+
+			g.drawString("One last thing, make sure to use lower-case letters when answering questions to get credit.",
+					Main.frameWidth / 3, Main.frameHeight / 3 + Main.frameHeight / 6);
+
 			g.drawString("Press the button in the bottom right when you are ready to play", Main.frameWidth / 3,
-					Main.frameHeight / 3 + Main.frameHeight / 6);
+					2 * Main.frameHeight / 3 - Main.frameHeight / 12);
+
 			g.drawString("You can't die in the tutorial, but if you hit two pieces of garbage for real...",
-					Main.frameWidth / 4, 2 * Main.frameHeight / 3);
-			g.drawString("it's game over!", Main.frameWidth / 3, 2 * Main.frameHeight / 3 + Main.frameHeight / 12);
+					Main.frameWidth / 4, 2 * Main.frameHeight / 3 + Main.frameHeight / 12);
+			g.drawString("it's game over!", Main.frameWidth / 3, 2 * Main.frameHeight / 3 + Main.frameHeight / 7);
 			g.setFont(font2);
 			g.drawString("Got it!", (int) Math.round(menuButton.x + menuButton.getWidth() / 20),
 					(int) Math.round(menuButton.y + 5 * menuButton.getHeight() / 7));
@@ -338,11 +343,11 @@ class GamePanel extends JPanel implements KeyListener {
 			hiscores.render(g);
 		} else if (Board.STATE == "Character") {
 			g.drawImage(View.TutorialBackground, 0, 0, Main.frameWidth, Main.frameHeight, this);
-			g.drawImage(View.FishPlayerImage, 4*Main.frameWidth / 17 + Main.frameWidth / 32,
+			g.drawImage(View.FishPlayerImage, 4 * Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
-			g.drawImage(View.CrabPlayerImage, 2 *4* Main.frameWidth / 17 + Main.frameWidth / 32,
+			g.drawImage(View.CrabPlayerImage, 2 * 4 * Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
-			g.drawImage(View.RedKnotPlayerImage, 3 * 4*Main.frameWidth / 17 + Main.frameWidth / 32,
+			g.drawImage(View.RedKnotPlayerImage, 3 * 4 * Main.frameWidth / 17 + Main.frameWidth / 32,
 					Main.frameHeight / 3 + Main.frameHeight / 14, Main.frameWidth / 10, Main.frameHeight / 12, this);
 			choice.render(g);
 		}
