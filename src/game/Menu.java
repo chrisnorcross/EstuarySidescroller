@@ -30,6 +30,9 @@ public class Menu {
 			g.setColor(Color.black);
 			g.drawString("Estuary Adventure", 2*Main.frameWidth/10, Main.frameHeight/5);
 			g.setFont(font1);
+			if(Board.plays ==0) {
+				g.drawString("Click me --->", (int)Math.round(HelpButton.x-2*HelpButton.getWidth()),(int)Math.round(HelpButton.getY()+HelpButton.getHeight()/2));
+			}
 			g.drawString("Play",(int) Math.round(PlayButton.x+PlayButton.getWidth()/10),(int)Math.round(PlayButton.y+PlayButton.getWidth()/3));
 			g.drawString("Help",(int) Math.round(HelpButton.x+HelpButton.getWidth()/10),(int)Math.round(HelpButton.y+HelpButton.getWidth()/3));
 			g.drawString("Quit",(int) Math.round(QuitButton.x+QuitButton.getWidth()/10),(int)Math.round(QuitButton.y+QuitButton.getWidth()/3));

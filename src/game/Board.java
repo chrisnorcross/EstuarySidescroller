@@ -21,6 +21,7 @@ public class Board /*implements KeyListener*/{
 	public static List<Integer> scoresfish = new ArrayList<>(Collections.nCopies(5, 0));
 	public static List<Integer> scorescrab = new ArrayList<>(Collections.nCopies(5, 0));
 	public static List<Integer> scoresbird = new ArrayList<>(Collections.nCopies(5, 0));
+	public static int plays =0;
 
 	public int scorequantity=0;
 	
@@ -125,6 +126,7 @@ public class Board /*implements KeyListener*/{
 	 * updates the game state on the board
 	 */
 	public void update() {
+		plays = plays%200+1;
 		timer++;
 		if(Board.STATE!="TutorialFish") {
 		if (timer%3000 ==0) {
