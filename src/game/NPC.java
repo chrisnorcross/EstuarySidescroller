@@ -3,7 +3,7 @@ package game;
 import java.util.Random;
 
 /**
- * @author Chris N NPC extends character
+ * @author Chris N. NPC extends character
  */
 public class NPC extends Character {
 	int image;

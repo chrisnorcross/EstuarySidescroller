@@ -54,6 +54,9 @@ public class PowerUp extends NPC {
 
 	};
 
+	/**
+	 * Answer Choices
+	 */
 	private static final String[] answers = {
 			// Answer 1
 			"horseshoe crab",
@@ -98,7 +101,7 @@ public class PowerUp extends NPC {
 
 	/**
 	 * Default Constructor
-	 * 
+	 * Value for correct is 300
 	 */
 	public PowerUp() {
 		value = 300;

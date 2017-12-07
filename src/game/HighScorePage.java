@@ -16,9 +16,7 @@ public class HighScorePage {
 
 	/**
 	 * Method to display the high score page to paint
-	 * 
-	 * @param g
-	 *            Graphics
+	 * @param g  Graphics
 	 */
 
 	public void render(Graphics g) {

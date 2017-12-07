@@ -53,6 +53,10 @@ public class Main {
 	public static int frameHeight = 900;// delete unless partial
 										// screen// keep for testing
 
+	/**
+	 * Run from Main
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		frameWidth = (int) screenSize.getWidth();
 		frameHeight = (int) screenSize.getHeight();

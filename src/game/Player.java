@@ -1,8 +1,8 @@
 package game;
 
 /**
- * @author ericallen player attributes: score, health, food, verticalVelocity
- *         and isAccel
+ * @author ericallen 
+ * player attributes: score, health, food, verticalVelocity and isAccel
  */
 public class Player extends Character {
 	static int score = 0;

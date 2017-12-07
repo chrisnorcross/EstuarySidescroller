@@ -7,8 +7,8 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 
 /**
- * @author ericallen Creates the view for to select character screen, makes 4
- *         buttons
+ * @author ericallen 
+ * Creates the view for to select character screen, makes 4 buttons
  */
 public class CharacterChoice {
 	public Rectangle FishButton = new Rectangle(1 * 4*Main.frameWidth / 17, Main.frameHeight / 2, Main.frameWidth / 7,
@@ -22,7 +22,6 @@ public class CharacterChoice {
 
 	/**
 	 * Renders the button to the screen
-	 * 
 	 * @param g
 	 */
 	public void render(Graphics g) {

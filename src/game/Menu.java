@@ -23,7 +23,6 @@ public class Menu {
 
 	/**
 	 * Renders the menu to view
-	 * 
 	 * @param g
 	 */
 	public void render(Graphics g) {

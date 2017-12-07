@@ -17,7 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * @author ericallen Cartoony images
+ * @author ericallen
+ * Load in cartoony images
  */
 
 public class View extends JFrame {
@@ -144,8 +145,6 @@ public class View extends JFrame {
 
 	/**
 	 * Retrieves the obstacles
-	 */
-	/**
 	 * @return obstacles
 	 */
 	public ArrayList<NPC> getObstacles() {
@@ -154,8 +153,6 @@ public class View extends JFrame {
 
 	/**
 	 * Places and updates the obstacles onto the map for render
-	 */
-	/**
 	 * @param obstacles
 	 */
 	public void setObstacles(ArrayList<NPC> obstacles) {
@@ -164,9 +161,6 @@ public class View extends JFrame {
 
 	/**
 	 * Retrieves the player
-	 */
-
-	/**
 	 * @return player
 	 */
 	public Player getPlayer() {
@@ -183,7 +177,6 @@ public class View extends JFrame {
 
 /**
  * @author ericallen
- *
  */
 class GamePanel extends JPanel implements KeyListener {
 
