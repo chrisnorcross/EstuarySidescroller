@@ -8,6 +8,7 @@ public class PowerUp extends NPC {
 
 	/**
 	 * Questions
+	 * Easily formatted to change/input your own questions
 	 */
 	private static final String[] questions = {
 			// Question 1
