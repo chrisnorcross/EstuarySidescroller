@@ -126,6 +126,7 @@ public class Board /*implements KeyListener*/{
 	 */
 	public void update() {
 		timer++;
+		if(Board.STATE!="TutorialFish") {
 		if (timer%3000 ==0) {
 			if (STATE == "GameFish") {
 				scoresfish.add(Player.score);
@@ -146,10 +147,12 @@ public class Board /*implements KeyListener*/{
 			STATE = "Over";
 			return;
 		}
+		}
 		player.updateMovement();
 		Random rand = new Random();
 		boolean isThereSpace = true;
 		moveNPCs();
+		if(Board.STATE!="TutorialFish") {
 		if (player.health <= 0) {
 			if (STATE == "GameFish") {
 				scoresfish.add(Player.score);
@@ -169,6 +172,7 @@ public class Board /*implements KeyListener*/{
 			}
 			STATE = "Over";
 			return;
+		}
 		}
 		NPC newNpc = new NPC();
 		for (NPC o : obstacles) {

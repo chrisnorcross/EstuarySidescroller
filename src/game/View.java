@@ -1,7 +1,10 @@
 package game;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
@@ -217,8 +220,10 @@ class GamePanel extends JPanel implements KeyListener{
 			}
 			g.drawImage(View.FishPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 			g.setColor(Color.BLACK);
-			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
-			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+			g.drawString("Score: " + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+			g.drawString("Health: " + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+			g.drawString("Time left: " + Integer.toString(3000-Board.timer%3000), 10*Main.frameWidth/14, Main.frameHeight/10);
+
 		}else if(Board.STATE=="GameCrab") {
 				g.drawImage(View.BackgroundFish, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 				g.drawImage(View.BackgroundFish, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
@@ -232,8 +237,9 @@ class GamePanel extends JPanel implements KeyListener{
 				}
 				g.drawImage(View.CrabPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 				g.setColor(Color.BLACK);
-				g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
-				g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+				g.drawString("Score: " + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+				g.drawString("Health: " + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+				g.drawString("Time left: " + Integer.toString(3000-Board.timer%3000), 10*Main.frameWidth/14, Main.frameHeight/10);
 		}else if(Board.STATE=="GameBird") {
 			g.drawImage(View.BackgroundBird, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
 			g.drawImage(View.BackgroundBird, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
@@ -248,14 +254,16 @@ class GamePanel extends JPanel implements KeyListener{
 					if (o.getLane()==4) {
 						g.drawImage(View.EggNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
 					}else {
-						g.drawImage(View.FlyNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+						g.drawImage(View.FlyNPCImage, o.getXloc(), o.getYloc(), Main.frameWidth/20, Main.frameHeight/17, null);
 					}
 				}
 			}
 			g.drawImage(View.RedKnotPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
 			g.setColor(Color.BLACK);
-			g.drawString("" + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
-			g.drawString("" + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+			g.drawString("Score: " + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+			g.drawString("Health: " + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+			g.drawString("Time left: " + Integer.toString(3000-Board.timer%3000), 10*Main.frameWidth/14, Main.frameHeight/10);
+
 		}else if(Board.STATE == "Menu") {
 			g.drawImage(View.BackgroundFish,  0, 0, Main.frameWidth, Main.frameHeight, this);
 			menu.render(g);
@@ -265,6 +273,36 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawImage(View.RedKnotPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 2* Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);
 			g.drawImage(View.CrabPlayerImage, Main.frameWidth/35+Main.frameWidth/14, 3*Main.frameHeight/6+Main.frameHeight/12, Main.frameWidth/10, Main.frameHeight/8, this);//Eric Added
 			tutorial.render(g);
+		}else if(Board.STATE=="TutorialFish") {
+			Rectangle menuButton = new Rectangle(5*Main.frameWidth/6,Main.frameHeight/4*3,Main.frameWidth/8,Main.frameHeight/12);
+			g.drawImage(View.BackgroundFish, -Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			g.drawImage(View.BackgroundFish, Main.frameWidth-Board.timer%Main.frameWidth, 0, Main.frameWidth, Main.frameHeight, this);
+			for (NPC o : obstacles){
+				if (o.getIsGarbage()) {
+					g.drawImage(View.TrashNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+					
+				} else {
+					//g.drawImage(View.FoodNPCImage, o.getXloc(), o.getYloc(), 50, 50, null);
+					g.drawImage(View.FoodNPCImages[o.image], o.getXloc(), o.getYloc(), Main.frameWidth/14, Main.frameHeight/10, null);
+				}
+			}
+			g.drawImage(View.FishPlayerImage, player.getXloc()-Player.score/100, player.getYloc()-Player.score/100, Main.frameWidth/14+Player.score/50, Main.frameHeight/10+Player.score/50, this);
+			g.setColor(Color.BLACK);
+			g.drawString("Score: " + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
+			g.drawString("Health: " + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
+			g.drawString("Time left: " + Integer.toString(3000-Board.timer%3000), 10*Main.frameWidth/14, Main.frameHeight/10);
+			Font font1 = new Font("calibri", Font.BOLD,Main.frameHeight/25);
+			Font font2 = new Font("calibri", Font.BOLD,Main.frameHeight/14);
+			g.setFont(font1);
+			g.drawString("Press up and down on the arrowkeys to move.", Main.frameWidth/3, Main.frameHeight/3);
+			g.drawString("Avoid the pollution! Aim for the powerups and fish!", Main.frameWidth/3, Main.frameHeight/3+Main.frameHeight/12);
+			g.drawString("Press the button in the bottom right when you are ready to play", Main.frameWidth/3, Main.frameHeight/3+Main.frameHeight/6);
+			g.drawString("You can't die in the tutorial, but if you hit two pieces of garbage for real...",Main.frameWidth/4 , 2*Main.frameHeight/3);
+			g.drawString("it's game over!", Main.frameWidth/3, 2*Main.frameHeight/3+Main.frameHeight/12);
+			g.setFont(font2);
+			g.drawString("Got it!",(int)Math.round(menuButton.x+menuButton.getWidth()/8),(int)Math.round(menuButton.y+5*menuButton.getHeight()/7));
+			Graphics2D g2d = (Graphics2D) g;
+			g2d.draw(menuButton);
 		}
 		else if (Board.STATE == "Over"){
 			g.drawImage(View.TutorialBackground,  0, 0, Main.frameWidth, Main.frameHeight, this);

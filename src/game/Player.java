@@ -37,13 +37,13 @@ public class Player extends Character {
 		}
 		if (isAccel)
 			accel();
-		yloc += verticalVelocity;
-		if(yloc>=Main.frameHeight-Main.frameHeight/6) {
-			yloc = Main.frameHeight-(Main.frameHeight/6);		
+			yloc += verticalVelocity;
+			if(yloc>=Main.frameHeight-Main.frameHeight/6) {
+				yloc = Main.frameHeight-(Main.frameHeight/6);		
+				}
+			if(yloc<=0) {
+				yloc = 0;
 			}
-		if(yloc<=0) {
-			yloc = 0;
-		}
 	}
 	
 	/**

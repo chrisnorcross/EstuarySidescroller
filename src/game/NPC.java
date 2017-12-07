@@ -27,7 +27,7 @@ public class NPC extends Character {
 		Random random = new Random();
 		image = random.nextInt(2);
 		isGarbage = random.nextBoolean();
-		speed = 4 + random.nextInt(3);
+		speed = 6 + random.nextInt(3);
 		if (isGarbage)
 			value = -100;
 		lane = (int) (Math.random()*5);
