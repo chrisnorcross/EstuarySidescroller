@@ -21,7 +21,7 @@ public class Tutorial {
 	 */
 	public void render(Graphics g) {
 		Font font = new Font("arial", Font.BOLD,Main.frameHeight/Main.frameHeight/25);
-		Font font3 = new Font("arial", Font.BOLD,Main.frameHeight/35);
+		Font font3 = new Font("arial", Font.BOLD,Main.frameHeight/40);
 		Font font2 = new Font("calibri", Font.BOLD,Main.frameHeight/14);
 		
 		
@@ -29,7 +29,7 @@ public class Tutorial {
 		g.setColor(Color.black);
 		g.drawString("This is a Striped Bass. It grows big and strong by eating smaller fish. " , Main.frameWidth/4, Main.frameHeight/3 -50);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*" , Main.frameWidth/4, Main.frameHeight/3+Main.frameHeight/15-50);
-		g.drawString("This is a Red Knot. It is a small bird that fattens up by eating horseshoe crab eggs. It also eats bugs" , Main.frameWidth/4, Main.frameHeight/2-50);
+		g.drawString("This is a Red Knot. It is a small bird that fattens up by eating horseshoe crab eggs. It also eats bugs." , Main.frameWidth/4, Main.frameHeight/2-50);
 		g.drawString("*To stay big, avoid clouds of pollution!*" , Main.frameWidth/4, Main.frameHeight/2+Main.frameHeight/15-60);
 		g.drawString("This is a Horseshoe Crab. It grows big and strong by eating fish." , Main.frameWidth/4, Main.frameHeight/2+120);
 		g.drawString("*It gets weak if it eats any type of garbage like tires and trashbags.*" , Main.frameWidth/4, Main.frameHeight/2+Main.frameHeight/16+120);

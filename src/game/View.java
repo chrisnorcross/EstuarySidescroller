@@ -291,7 +291,7 @@ class GamePanel extends JPanel implements KeyListener{
 			g.drawString("Score: " + player.getScore(), Main.frameWidth/14, Main.frameHeight/10);
 			g.drawString("Health: " + player.getHealth(), Main.frameWidth/14, Main.frameHeight/8);
 			g.drawString("Time left: " + Integer.toString(3000-Board.timer%3000), 10*Main.frameWidth/14, Main.frameHeight/10);
-			Font font1 = new Font("calibri", Font.BOLD,Main.frameHeight/25);
+			Font font1 = new Font("calibri", Font.BOLD,Main.frameHeight/40);
 			Font font2 = new Font("calibri", Font.BOLD,Main.frameHeight/14);
 			g.setFont(font1);
 			g.drawString("Press up and down on the arrowkeys to move.", Main.frameWidth/3, Main.frameHeight/3);
